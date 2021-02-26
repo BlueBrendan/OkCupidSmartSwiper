@@ -1,5 +1,7 @@
 import time
 
 def leftSwipe(driver):
-    passButton = driver.find_element_by_id("pass-button")
+    time.sleep(0.5)
+    pillButtons = driver.find_element_by_class_name("profile-userinfo-buttons")
+    passButton = pillButtons.find_element_by_id("pass-button")
     passButton.click()
