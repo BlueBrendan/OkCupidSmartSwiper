@@ -33,8 +33,7 @@ def updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeC
     leftLabel.configure(text="Left Swipes: " + str(leftSwipeCount))
     rightLabel.configure(text="Right Swipes: " + str(rightSwipeCount))
 
-def openProfile(event, rightSwipeListbox, swipeList):
-    print(rightSwipeListbox.focus())
+def openProfile(rightSwipeListbox, swipeList):
     webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][4])
 
 def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList):
@@ -43,9 +42,9 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
     finalDisplay.configure(bg=bg)
     ws = finalDisplay.winfo_screenwidth()  # width of the screen
     hs = finalDisplay.winfo_screenheight()  # height of the screen
-    x = (ws / 2) - (650 / 2)
-    y = (hs / 2) - (550 / 2)
-    finalDisplay.geometry('%dx%d+%d+%d' % (650, 550, x, y))
+    x = (ws / 2) - (700 / 2)
+    y = (hs / 2) - (500 / 2)
+    finalDisplay.geometry('%dx%d+%d+%d' % (700, 500, x, y))
 
     titleFrame = tk.Frame(finalDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
@@ -67,17 +66,17 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
     rightSwipeListbox.pack(pady=(20, 0))
     rightSwipeListbox.column('#0', width=0, stretch=tk.NO)
     rightSwipeListbox.column('#1', anchor=tk.CENTER, width=60)
-    rightSwipeListbox.column('#2', width=150)
-    rightSwipeListbox.column('#3', anchor=tk.CENTER, width=110)
-    rightSwipeListbox.column('#4', anchor=tk.CENTER, width=110)
-    rightSwipeListbox.column('#5', anchor=tk.CENTER, width=110)
+    rightSwipeListbox.column('#2', width=120)
+    rightSwipeListbox.column('#3', anchor=tk.CENTER, width=120)
+    rightSwipeListbox.column('#4', anchor=tk.CENTER, width=120)
+    rightSwipeListbox.column('#5', anchor=tk.CENTER, width=120)
     rightSwipeListbox.heading('#1', text="#")
     rightSwipeListbox.heading('#2', text="Name")
     rightSwipeListbox.heading('#3', text="Match %")
     rightSwipeListbox.heading('#4', text="Images")
     rightSwipeListbox.heading('#5', text="Questions")
     for i in range(len(swipeList)):
-        rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(e, rightSwipeListbox, swipeList))
+        rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(rightSwipeListbox, swipeList))
         rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3]))
     tk.Button(bottomFrame, text="OK", command=lambda: finalDisplay.destroy(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
     finalDisplay.update()

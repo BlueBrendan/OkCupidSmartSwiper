@@ -1,7 +1,7 @@
 import time
 
 def waitForMessageBox(driver):
-    time.sleep(1)
+    time.sleep(0.5)
     try:
         driver.find_element_by_class_name('connection-view-container-close-button')
         return
@@ -13,14 +13,10 @@ def rightSwipe(driver):
     pillButtons = driver.find_element_by_class_name("profile-userinfo-buttons")
     likeButton = pillButtons.find_element_by_id("like-button")
     likeButton.click()
-    time.sleep(1.5)
-    try:
-        driver.find_element_by_class_name('connection-view-container-close-button')
-    except:
-        waitForMessageBox(driver)
+    waitForMessageBox(driver)
     time.sleep(0.5)
     closeButton = driver.find_element_by_class_name('connection-view-container-close-button')
     closeButton.click()
-    time.sleep(1)
+    time.sleep(0.5)
     # return to discover
     driver.get("https://www.okcupid.com/discover")
