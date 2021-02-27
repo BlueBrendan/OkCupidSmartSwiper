@@ -4,6 +4,8 @@ import webbrowser
 
 bg = "#282f3b"
 secondary_bg = "#ff4ec0"
+tertiary_bg = "2f3346"
+
 def createResultsDisplay(options):
     resultsDisplay = tk.Toplevel()
     resultsDisplay.title("Progress Window")
@@ -36,33 +38,42 @@ def updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeC
 def openProfile(rightSwipeListbox, swipeList):
     webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][4])
 
-def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList):
+def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty):
     finalDisplay = tk.Toplevel()
     finalDisplay.title("Final Results")
     finalDisplay.configure(bg=bg)
     ws = finalDisplay.winfo_screenwidth()  # width of the screen
     hs = finalDisplay.winfo_screenheight()  # height of the screen
     x = (ws / 2) - (700 / 2)
-    y = (hs / 2) - (500 / 2)
-    finalDisplay.geometry('%dx%d+%d+%d' % (700, 500, x, y))
+    y = (hs / 2) - (550 / 2)
+    finalDisplay.geometry('%dx%d+%d+%d' % (700, 550, x, y))
 
     titleFrame = tk.Frame(finalDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
     resultsFrame = tk.Frame(finalDisplay, bg=bg)
     resultsFrame.pack(pady=(20, 0))
+    infoFrame = tk.Frame(finalDisplay, bg=bg)
+    infoFrame.pack(fill='x', pady=(10, 10))
     tableFrame = tk.Frame(finalDisplay, bg=bg)
     tableFrame.pack(pady=(20, 0))
     bottomFrame = tk.Frame(finalDisplay, bg=bg)
     bottomFrame.pack(pady=(20, 0))
     if totalSwipeCount == 1:
-        tk.Label(titleFrame, text=str(totalSwipeCount) + " Swipe Completed", font=('Symphonie Grotesque', 25), fg="white", bg=bg).pack(pady=(20, 0))
+            tk.Label(titleFrame, text=str(totalSwipeCount) + " Swipe Completed", font=('Symphonie Grotesque', 25), fg="white", bg=bg).pack(pady=(20, 0))
     else:
-        tk.Label(titleFrame, text=str(totalSwipeCount) + " Swipes Completed", font=('Symphonie Grotesque', 25), fg="white", bg=bg).pack(pady=(20, 0))
+            tk.Label(titleFrame, text=str(totalSwipeCount) + " Swipes Completed", font=('Symphonie Grotesque', 25), fg="white", bg=bg).pack(pady=(20, 0))
     tk.Label(resultsFrame, text="Left Swipes: " + str(leftSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="left", padx=(0, 25))
     tk.Label(resultsFrame, text="Right Swipes: " + str(rightSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="right", padx=(25, 0))
+    if (empty):
+        tk.Label(infoFrame, text="Program ended prematurely due to empty stack!\nChange your preferences to find more matches", font=('Symphonie Grotesque', 12), fg="white", bg=bg).pack(pady=(10, 0))
 
-    # listbox
-    rightSwipeListbox = ttk.Treeview(tableFrame, columns=("#", "Name", "Match Percentage", "Image Count", "Question Count"))
+    # treeview to display all profiles we swiped right on
+    # style = ttk.Style()
+    # style.configure("mystyle.Treeview", highlightthickness=0, bd=0, font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
+    # style.configure("mystyle.Treeview.Heading", font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
+    # style.layout("mystyle.Treeview", [('mystyle.Treeview.treearea', {'sticky': 'nswe'})])
+
+    rightSwipeListbox = ttk.Treeview(tableFrame, columns=("#", "Name", "Match Percentage", "Image Count", "Question Count"), style='mystyle.Treeview')
     rightSwipeListbox.pack(pady=(20, 0))
     rightSwipeListbox.column('#0', width=0, stretch=tk.NO)
     rightSwipeListbox.column('#1', anchor=tk.CENTER, width=60)

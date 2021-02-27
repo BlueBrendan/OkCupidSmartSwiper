@@ -53,15 +53,15 @@ def checkInt(value, newTotal, type):
     try:
         int(value)
         if type == "swipes":
-            if newTotal == '' or int(newTotal) <= 300 and not ('0' in newTotal and len(newTotal) >= 1 and newTotal[0] == '0'): return True
+            if newTotal == '' or int(newTotal) <= 300 and len(str(newTotal)) <= 3: return True
         elif type == "compatibility":
-            if newTotal == '' or int(newTotal) <= 100 and not ('0' in newTotal and len(newTotal) >= 2 and newTotal[0] == '0'): return True
+            if newTotal == '' or int(newTotal) <= 100  and len(str(newTotal)) <= 3: return True
         elif type == "images":
             if newTotal == '' or int(newTotal) <= 9 and int(newTotal) != 0: return True
         elif type == "words":
-            if newTotal == '' or int(newTotal) <= 300 and not ('0' in newTotal and len(newTotal) >= 2 and newTotal[0] == '0'):return True
+            if newTotal == '' or int(newTotal) <= 300 and len(str(newTotal)) <= 3:return True
         elif type == "questions":
-            if newTotal == '' or int(newTotal) <= 1000 and not ('0' in newTotal and len(newTotal) >= 2 and newTotal[0] == '0'): return True
+            if newTotal == '' or int(newTotal) <= 1000 and len(str(newTotal)) <= 4: return True
         return False
     except ValueError:
         return False
