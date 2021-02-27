@@ -18,6 +18,7 @@ def rightSwipe(driver):
         driver.find_element_by_class_name('connection-view-container-close-button')
     except:
         waitForMessageBox(driver)
+    time.sleep(0.5)
     closeButton = driver.find_element_by_class_name('connection-view-container-close-button')
     closeButton.click()
     time.sleep(1)

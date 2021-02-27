@@ -19,5 +19,5 @@ def readConfigFile():
 def createConfigFile():
     # create settings file
     file = open("Settings.txt", 'w')
-    file.write("Number of Swipes:10\nMinimum Percentage:95\nMinimum Number of Images:3\nMinimum Word Count:50\nMinimum Questions Answered:50\n")
+    file.write("Number of Swipes:10\nMinimum Percentage:93\nMinimum Number of Images:3\nMinimum Word Count:75\nMinimum Questions Answered:50\n")
     file.close()

@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import ttk
+import webbrowser
 
 bg = "#282f3b"
 secondary_bg = "#ff4ec0"
@@ -6,7 +8,7 @@ def createResultsDisplay(options):
     resultsDisplay = tk.Toplevel()
     resultsDisplay.title("Progress Window")
     resultsDisplay.configure(bg=bg)
-    resultsDisplay.geometry("600x150+0+0")
+    resultsDisplay.geometry("600x180+0+0")
 
     titleFrame = tk.Frame(resultsDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
@@ -31,15 +33,19 @@ def updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeC
     leftLabel.configure(text="Left Swipes: " + str(leftSwipeCount))
     rightLabel.configure(text="Right Swipes: " + str(rightSwipeCount))
 
-def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount):
+def openProfile(event, rightSwipeListbox, swipeList):
+    print(rightSwipeListbox.focus())
+    webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][4])
+
+def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList):
     finalDisplay = tk.Toplevel()
     finalDisplay.title("Final Results")
     finalDisplay.configure(bg=bg)
     ws = finalDisplay.winfo_screenwidth()  # width of the screen
     hs = finalDisplay.winfo_screenheight()  # height of the screen
-    x = (ws / 2) - (700 / 2)
-    y = (hs / 2) - (400 / 2)
-    finalDisplay.geometry('%dx%d+%d+%d' % (700, 400, x, y))
+    x = (ws / 2) - (650 / 2)
+    y = (hs / 2) - (550 / 2)
+    finalDisplay.geometry('%dx%d+%d+%d' % (650, 550, x, y))
 
     titleFrame = tk.Frame(finalDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
@@ -55,5 +61,23 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount):
         tk.Label(titleFrame, text=str(totalSwipeCount) + " Swipes Completed", font=('Symphonie Grotesque', 25), fg="white", bg=bg).pack(pady=(20, 0))
     tk.Label(resultsFrame, text="Left Swipes: " + str(leftSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="left", padx=(0, 25))
     tk.Label(resultsFrame, text="Right Swipes: " + str(rightSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="right", padx=(25, 0))
-    tk.Button(bottomFrame, text="OK", command=lambda: finalDisplay.destroy(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack()
+
+    # listbox
+    rightSwipeListbox = ttk.Treeview(tableFrame, columns=("#", "Name", "Match Percentage", "Image Count", "Question Count"))
+    rightSwipeListbox.pack(pady=(20, 0))
+    rightSwipeListbox.column('#0', width=0, stretch=tk.NO)
+    rightSwipeListbox.column('#1', anchor=tk.CENTER, width=60)
+    rightSwipeListbox.column('#2', width=150)
+    rightSwipeListbox.column('#3', anchor=tk.CENTER, width=110)
+    rightSwipeListbox.column('#4', anchor=tk.CENTER, width=110)
+    rightSwipeListbox.column('#5', anchor=tk.CENTER, width=110)
+    rightSwipeListbox.heading('#1', text="#")
+    rightSwipeListbox.heading('#2', text="Name")
+    rightSwipeListbox.heading('#3', text="Match %")
+    rightSwipeListbox.heading('#4', text="Images")
+    rightSwipeListbox.heading('#5', text="Questions")
+    for i in range(len(swipeList)):
+        rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(e, rightSwipeListbox, swipeList))
+        rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3]))
+    tk.Button(bottomFrame, text="OK", command=lambda: finalDisplay.destroy(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
     finalDisplay.update()
