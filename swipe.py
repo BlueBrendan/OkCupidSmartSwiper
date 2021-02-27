@@ -1,31 +1,30 @@
 from rightSwipe import rightSwipe
 from leftSwipe import leftSwipe
+from externalDisplays import updateResultsDisplay, createFinalDisplay
 import time
 
 def waitForCardDeck(driver):
+    time.sleep(1)
     try:
         driver.find_element_by_class_name("cardsummary")
         return
     except:
-        time.sleep(2)
         waitForCardDeck(driver)
 
 def waitForProfile(driver):
+    time.sleep(1)
     try:
         driver.find_element_by_class_name('profile-basics-asl-match')
         return
     except:
-        time.sleep(2)
         waitForProfile(driver)
 
-def swipe(driver, options, totalSwipeCount, rightSwipeCount, leftSwipeCount):
+def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount):
     time.sleep(1)
     waitForCardDeck(driver)
     profileLink = driver.find_element_by_class_name('cardsummary-item.cardsummary-profile-link')
     link = str(profileLink.get_attribute('innerHTML'))
     link = link[link.index('href="') + 6:link.index('>', link.index('href="')) - 1]
-
-
     driver.get("https://www.okcupid.com" + link)
     time.sleep(1)
     waitForProfile(driver)
@@ -67,8 +66,12 @@ def swipe(driver, options, totalSwipeCount, rightSwipeCount, leftSwipeCount):
         leftSwipe(driver)
         leftSwipeCount+=1
     totalSwipeCount+=1
+    # update results display
+    updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeCount, leftSwipeCount, rightSwipeCount)
+    resultsDisplay.update()
     if totalSwipeCount < options['Number of Swipes'].get():
-        swipe(driver, options, totalSwipeCount, rightSwipeCount, leftSwipeCount)
+        swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount)
     else:
         driver.quit()
-        print("SWIPING COMPLETE\nTotal Swipes: " + str(totalSwipeCount) + "\nRight Swipes: " + str(rightSwipeCount) + "\nLeft Swipes: " + str(leftSwipeCount))
+        resultsDisplay.destroy()
+        createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount)

@@ -87,7 +87,7 @@ validate = (questionsContainerEntry .register(checkInt))
 questionsContainerEntry .configure(validatecommand=(validate, '%S', '%P', "questions"))
 questionsContainerEntry .pack(anchor="w", padx=(3, 0))
 
-startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(options), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(50, 0))
-bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe exists solely to enhance the swiping experience and is completely unaffiliated with OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(70, 0))
+startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(50, 0))
+bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(70, 0))
 root.mainloop()
 
