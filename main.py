@@ -1,5 +1,5 @@
 from login import login
-from settingsChange import swipesEntrybox, percentageEntrybox, imagesEntrybox, wordsEntrybox, questionsEntrybox, checkInt
+from settingsChange import swipesEntrybox, checkbuttonClick, percentageEntrybox, imagesEntrybox, wordsEntrybox, questionsEntrybox, checkInt
 from configSetup import readConfigFile, createConfigFile
 from resourcePath import resourcePath
 import tkinter as tk
@@ -30,14 +30,14 @@ optionsTopRow.pack(pady=(40, 0))
 # number of swipes to perform
 swipesContainer = tk.Frame(optionsTopRow, bg=bg)
 swipesContainer.pack(side="left")
-swipesContainerTitle = tk.Label(swipesContainer, text="Number of\nSwipes to Perform (1-300)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
+swipesContainerTitle = tk.Label(swipesContainer, text="Number of\nSwipes to Perform (1-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 swipes = tk.StringVar(value=options['Number of Swipes'].get())
 swipes.trace("w", lambda name, index, mode, swipes=swipes: swipesEntrybox(swipes))
 swipesEntry = tk.Entry(swipesContainer, width=5, textvariable=swipes, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
 # validate input
 validate = (swipesEntry.register(checkInt))
 swipesEntry.configure(validatecommand=(validate, '%S', '%P', "swipes"))
-swipesEntry.pack(anchor="w", padx=(3, 0))
+swipesEntry.pack(anchor="w", padx=(3, 0), pady=(0, 20))
 
 # compatibility percentage threshold selection
 compatibilityContainer = tk.Frame(optionsTopRow, bg=bg)
@@ -50,6 +50,10 @@ compatibilityEntry = tk.Entry(compatibilityContainer, width=5, textvariable=perc
 validate = (compatibilityEntry.register(checkInt))
 compatibilityEntry.configure(validatecommand=(validate, '%S', '%P', "compatibility"))
 compatibilityEntry.pack(anchor="w", padx=(3, 0))
+if not options['Check Percentage'].get():
+    compatibilityEntry.config(state=tk.DISABLED)
+compatibilityCheckbutton = tk.Checkbutton(compatibilityContainer, variable=options['Check Percentage'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(compatibilityEntry, "Check Percentage"))
+compatibilityCheckbutton.pack(anchor="w", pady=(0, 0))
 
 # number of images threshold selection
 imagesContainer = tk.Frame(optionsTopRow, bg=bg)
@@ -57,11 +61,15 @@ imagesContainer.pack(side="left", padx=(50, 0))
 imagesContainerTitle = tk.Label(imagesContainer, text="Minimum Number\nof Images (1-9)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 images = tk.StringVar(value=options['Minimum Number of Images'].get())
 images.trace("w", lambda name, index, mode, images=images: imagesEntrybox(images))
-imagesContainerEntry = tk.Entry(imagesContainer, width=5, textvariable=images, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+imagesEntry = tk.Entry(imagesContainer, width=5, textvariable=images, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
 # validate input
-validate = (imagesContainerEntry.register(checkInt))
-imagesContainerEntry.configure(validatecommand=(validate, '%S', '%P', "images"))
-imagesContainerEntry.pack(anchor="w", padx=(3, 0))
+validate = (imagesEntry.register(checkInt))
+imagesEntry.configure(validatecommand=(validate, '%S', '%P', "images"))
+imagesEntry.pack(anchor="w", padx=(3, 0))
+if not options['Check Images'].get():
+    imagesEntry.config(state=tk.DISABLED)
+imagesCheckbutton = tk.Checkbutton(imagesContainer, variable=options['Check Images'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(imagesEntry, "Check Images"))
+imagesCheckbutton.pack(anchor="w", pady=(10, 0))
 
 # number of words threshold selection
 wordsContainer = tk.Frame(optionsTopRow, bg=bg)
@@ -69,11 +77,15 @@ wordsContainer.pack(side="left", padx=(50, 0))
 wordsContainerTitle = tk.Label(wordsContainer, text="Minimum Word\nCount in Bio (0-300)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 words = tk.StringVar(value=options['Minimum Word Count'].get())
 words.trace("w", lambda name, index, mode, words=words: wordsEntrybox(words))
-wordsContainerEntry = tk.Entry(wordsContainer, width=5, textvariable=words, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+wordsEntry = tk.Entry(wordsContainer, width=5, textvariable=words, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
 # validate input
-validate = (wordsContainerEntry.register(checkInt))
-wordsContainerEntry.configure(validatecommand=(validate, '%S', '%P', "words"))
-wordsContainerEntry.pack(anchor="w", padx=(3, 0))
+validate = (wordsEntry.register(checkInt))
+wordsEntry.configure(validatecommand=(validate, '%S', '%P', "words"))
+wordsEntry.pack(anchor="w", padx=(3, 0))
+if not options['Check Words'].get():
+    wordsEntry.config(state=tk.DISABLED)
+wordsCheckbutton = tk.Checkbutton(wordsContainer, variable=options['Check Words'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(wordsEntry, "Check Words"))
+wordsCheckbutton.pack(anchor="w", pady=(10, 0))
 
 # number of questions threshold selection
 questionsContainer = tk.Frame(optionsTopRow, bg=bg)
@@ -81,13 +93,17 @@ questionsContainer.pack(side="left", padx=(50, 0))
 questionsContainerTitle = tk.Label(questionsContainer, text="Minimum Number\nof Questions Answered (0-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 questions = tk.StringVar(value=options['Minimum Questions Answered'].get())
 questions.trace("w", lambda name, index, mode, questions=questions: questionsEntrybox(questions))
-questionsContainerEntry = tk.Entry(questionsContainer, width=5, textvariable=questions, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+questionsEntry = tk.Entry(questionsContainer, width=5, textvariable=questions, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
 # validate input
-validate = (questionsContainerEntry .register(checkInt))
-questionsContainerEntry .configure(validatecommand=(validate, '%S', '%P', "questions"))
-questionsContainerEntry .pack(anchor="w", padx=(3, 0))
+validate = (questionsEntry .register(checkInt))
+questionsEntry.configure(validatecommand=(validate, '%S', '%P', "questions"))
+questionsEntry.pack(anchor="w", padx=(3, 0))
+if not options['Check Questions'].get():
+    questionsEntry.config(state=tk.DISABLED)
+questionsCheckbutton = tk.Checkbutton(questionsContainer, variable=options['Check Questions'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(questionsEntry, "Check Questions"))
+questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 
-startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(50, 0))
-bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(70, 0))
+startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(35, 0))
+bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(60, 0))
 root.mainloop()
 
