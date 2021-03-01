@@ -561,3 +561,358 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 ###!!! [Parent][MessageChannel] Error: (msgtype=0x1F0011,name=PBackgroundStorage::Msg_Observe) Channel error: cannot send/recv
 
 1614229504219	Marionette	INFO	Stopped listening on port 44353
+1614587341727	geckodriver	INFO	Listening on 127.0.0.1:57703
+1614587342733	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile8tcmEF"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614587344451	Marionette	INFO	Listening on port 45795
+1614587344554	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614587387511	geckodriver	INFO	Listening on 127.0.0.1:38463
+1614587387531	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFFeDkB"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614587388951	Marionette	INFO	Listening on port 36443
+1614587389060	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614587410717	Marionette	INFO	Stopped listening on port 36443
+1614587471190	geckodriver	INFO	Listening on 127.0.0.1:57335
+1614587471213	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileSMB6Sc"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614587472845	Marionette	INFO	Listening on port 39017
+1614587472933	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614587727664	geckodriver	INFO	Listening on 127.0.0.1:49035
+1614587727689	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile5MeK4P"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614587729305	Marionette	INFO	Listening on port 45263
+1614587729410	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614587765470	geckodriver	INFO	Listening on 127.0.0.1:43437
+1614587765495	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTfF3bc"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614587767205	Marionette	INFO	Listening on port 42703
+1614587767315	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614587834095	geckodriver	INFO	Listening on 127.0.0.1:50369
+1614587834116	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegeQORB"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614587835804	Marionette	INFO	Listening on port 39661
+1614587835835	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614587987762	geckodriver	INFO	Listening on 127.0.0.1:39343
+1614587987786	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileY2XKen"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614587989281	Marionette	INFO	Listening on port 44031
+1614587989308	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614588187183	geckodriver	INFO	Listening on 127.0.0.1:43477
+1614588187207	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilevkLFmD"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614588188779	Marionette	INFO	Listening on port 38917
+1614588188825	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614588236186	geckodriver	INFO	Listening on 127.0.0.1:58775
+1614588236209	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegOWyrX"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614588237792	Marionette	INFO	Listening on port 36595
+1614588237827	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614588292849	geckodriver	INFO	Listening on 127.0.0.1:41683
+1614588292870	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZys6Gn"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614588294660	Marionette	INFO	Listening on port 45421
+1614588294690	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1614588428845	geckodriver	INFO	Listening on 127.0.0.1:38759
+1614588428870	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilexfAm85"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614588430649	Marionette	INFO	Listening on port 41491
+1614588430695	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614588459767	geckodriver	INFO	Listening on 127.0.0.1:36851
+1614588459792	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile081R9N"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614588461339	Marionette	INFO	Listening on port 43219
+1614588461410	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614588551015	geckodriver	INFO	Listening on 127.0.0.1:51105
+1614588551039	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHknEcB"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614588552631	Marionette	INFO	Listening on port 37999
+1614588552657	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614588656632	geckodriver	INFO	Listening on 127.0.0.1:50007
+1614588656642	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilesgwmhD"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614588658485	Marionette	INFO	Listening on port 37993
+1614588658562	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: uncaught exception: null
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.b7285738d7a6c3925a3a.min.js, line 45: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+1614588784876	Marionette	INFO	Stopped listening on port 37993
+1614589054861	geckodriver	INFO	Listening on 127.0.0.1:58577
+1614589054885	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiletDZpWY"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614589056436	Marionette	INFO	Listening on port 40809
+1614589056505	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614589216266	Marionette	INFO	Stopped listening on port 40809
+1614589224265	geckodriver	INFO	Listening on 127.0.0.1:32821
+1614589224283	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYqhWDP"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614589226009	Marionette	INFO	Listening on port 33021
+1614589226103	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1614589258229	geckodriver	INFO	Listening on 127.0.0.1:43313
+1614589258254	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilesXT0rI"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614589259962	Marionette	INFO	Listening on port 33015
+1614589260076	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614589290064	geckodriver	INFO	Listening on 127.0.0.1:36481
+1614589290088	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile75x1rb"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614589291719	Marionette	INFO	Listening on port 38985
+1614589291828	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614589330496	geckodriver	INFO	Listening on 127.0.0.1:40083
+1614589330521	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileyL28qY"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614589332092	Marionette	INFO	Listening on port 42953
+1614589332160	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614589519094	Marionette	INFO	Stopped listening on port 42953
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614589528959	geckodriver	INFO	Listening on 127.0.0.1:35871
+1614589537667	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiled48Jxq"
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+1614589539288	Marionette	INFO	Listening on port 44637
+JavaScript error: undefined, line 0: Error: frame.state is undefined
+1614589539418	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: resource://gre/modules/ExtensionContent.jsm, line 571: TypeError: PrecompiledScript.executeInGlobal: Argument 1 is not an object.
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+JavaScript error: undefined, line 0: Error: frame.state is undefined
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614589637646	geckodriver	INFO	Listening on 127.0.0.1:46923
+1614589646125	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUqwd6P"
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+1614589647753	Marionette	INFO	Listening on port 34133
+1614589647849	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: undefined, line 0: Error: frame.state is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: resource://gre/modules/ExtensionContent.jsm, line 571: TypeError: PrecompiledScript.executeInGlobal: Argument 1 is not an object.
+JavaScript error: resource://gre/modules/ExtensionContent.jsm, line 571: TypeError: PrecompiledScript.executeInGlobal: Argument 1 is not an object.
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.b7285738d7a6c3925a3a.min.js, line 29: Error: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.b7285738d7a6c3925a3a.min.js, line 29: Error: NetworkError when attempting to fetch resource.
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PMessagePort::Msg_PostMessages Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PMessagePort::Msg_PostMessages Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614589708178	geckodriver	INFO	Listening on 127.0.0.1:45899
+1614589716672	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilem18vzT"
+1614589718249	Marionette	INFO	Listening on port 46419
+1614589718298	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: undefined, line 0: Error: frame.state is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: resource://gre/modules/ExtensionContent.jsm, line 571: TypeError: PrecompiledScript.executeInGlobal: Argument 1 is not an object.
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 0ms)
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: undefined, line 0: Error: frame.state is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+1614589839421	Marionette	INFO	Stopped listening on port 46419
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5C0004,name=PHttpChannel::Msg_Cancel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5C0009,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
