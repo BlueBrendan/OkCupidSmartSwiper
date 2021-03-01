@@ -44,9 +44,9 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
     finalDisplay.configure(bg=bg)
     ws = finalDisplay.winfo_screenwidth()  # width of the screen
     hs = finalDisplay.winfo_screenheight()  # height of the screen
-    x = (ws / 2) - (700 / 2)
+    x = (ws / 2) - (800 / 2)
     y = (hs / 2) - (550 / 2)
-    finalDisplay.geometry('%dx%d+%d+%d' % (700, 550, x, y))
+    finalDisplay.geometry('%dx%d+%d+%d' % (800, 550, x, y))
 
     titleFrame = tk.Frame(finalDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))

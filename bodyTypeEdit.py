@@ -61,4 +61,4 @@ def bodyTypeEdit(options, bg, secondary_bg, tertiary_bg):
 
     description = tk.Frame(bodyTypeWindow, bg=bg)
     description.pack()
-    tk.Label(description, text="Disabling a body type will result in a left swipe\nwhenever that body type is encountered", font=('Symphonie Grotesque', 15), fg="white", bg=bg, justify='left').pack(pady=(15, 0))
+    tk.Label(description, text="Disabling a body type will swipe left\non all profiles identifying as that body type", font=('Symphonie Grotesque', 15), fg="white", bg=bg, justify='left').pack(pady=(15, 0))

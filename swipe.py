@@ -52,22 +52,31 @@ def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, to
                 wordCount += (bioElements[i].text.count(' ') + 1)
 
         # check body type (if applicable)
-        body_type = ''
+        bodyTypePass = False
         try:
-            body_type = driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks')
-            print(body_type.text)
+            bodyTypeDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks').text)
+            for bodyType in options['Body Types']:
+                if bodyType.lower() in bodyTypeDescription.lower():
+                    bodyTypePass = True
+                    break
         except:
             pass
 
         # check ethnicity
-        ethnicity = ''
+        ethnicityPass = False
         try:
-            ethnicity = driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background')
-            print(ethnicity.text)
+            if not bodyTypePass:
+                ethnicityDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background').text)
+                for ethnicity in options['Ethnicities']:
+                    if ethnicity.lower() in ethnicityDescription.lower():
+                        ethnicityPass = True
+                        break
         except:
             pass
-
-        if options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():
+        if bodyTypePass or ethnicityPass:
+            cardDeckLeftSwipe(driver)
+            leftSwipeCount += 1
+        elif options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
         elif options['Check Images'].get() and not imageCount >= options['Minimum Number of Images'].get():

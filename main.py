@@ -2,6 +2,7 @@ from login import login
 from settingsChange import swipesEntrybox, checkbuttonClick, percentageEntrybox, imagesEntrybox, wordsEntrybox, questionsEntrybox, checkInt
 from configSetup import readConfigFile, createConfigFile
 from bodyTypeEdit import bodyTypeEdit
+from ethnicityEdit import ethnicityEdit
 from resourcePath import resourcePath
 import tkinter as tk
 import os
@@ -110,7 +111,7 @@ questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
 buttonsContainer.pack(side="left", padx=(50, 0))
 bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white").pack(pady=(0, 10))
-ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white").pack(pady=(10, 0))
+ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white").pack(pady=(10, 0))
 
 startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(35, 0))
 bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(60, 0))
