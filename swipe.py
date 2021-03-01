@@ -43,12 +43,30 @@ def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, to
         # check number of photos
         imageElements = driver.find_elements_by_class_name('fadein-image.image_wrapper.loaded')
         imageCount = len(imageElements)
+
         # check bio word count
         bioElements = driver.find_elements_by_class_name('qmessays-essay')
         wordCount = 0
         for i in range(len(bioElements)):
             if len(bioElements[i].text) > 0:
                 wordCount += (bioElements[i].text.count(' ') + 1)
+
+        # check body type (if applicable)
+        body_type = ''
+        try:
+            body_type = driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks')
+            print(body_type.text)
+        except:
+            pass
+
+        # check ethnicity
+        ethnicity = ''
+        try:
+            ethnicity = driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background')
+            print(ethnicity.text)
+        except:
+            pass
+
         if options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
@@ -65,7 +83,7 @@ def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, to
                 profileLink = driver.find_element_by_class_name('cardsummary-item.cardsummary-profile-link')
                 link = str(profileLink.get_attribute('innerHTML'))
                 link = "https://www.okcupid.com" + link[link.index('href="') + 6:link.index('>', link.index('href="')) - 1]
-                swipeList.append([name, matchPercentage, imageCount, 'NA', link])
+                swipeList.append([name, matchPercentage, imageCount, wordCount, 'NA', link])
                 cardDeckRightSwipe(driver)
                 rightSwipeCount += 1
             else:
@@ -85,7 +103,7 @@ def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, to
 
                 if questionCount >= options['Minimum Questions Answered'].get():
                     name = driver.find_element_by_class_name("profile-basics-username").text
-                    swipeList.append([name, matchPercentage, imageCount, questionCount, link])
+                    swipeList.append([name, matchPercentage, imageCount, wordCount, questionCount, link])
                     profileRightSwipe(driver)
                     rightSwipeCount+=1
                 else:

@@ -4,7 +4,7 @@ import webbrowser
 
 bg = "#282f3b"
 secondary_bg = "#ff4ec0"
-tertiary_bg = "2f3346"
+tertiary_bg = "#2f3346"
 
 def createResultsDisplay(options):
     resultsDisplay = tk.Toplevel()
@@ -36,7 +36,7 @@ def updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeC
     rightLabel.configure(text="Right Swipes: " + str(rightSwipeCount))
 
 def openProfile(rightSwipeListbox, swipeList):
-    webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][4])
+    webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][5])
 
 def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty):
     finalDisplay = tk.Toplevel()
@@ -68,12 +68,12 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
         tk.Label(infoFrame, text="Program ended prematurely due to empty stack!\nChange your preferences to find more matches", font=('Symphonie Grotesque', 12), fg="white", bg=bg).pack(pady=(10, 0))
 
     # treeview to display all profiles we swiped right on
-    # style = ttk.Style()
-    # style.configure("mystyle.Treeview", highlightthickness=0, bd=0, font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
-    # style.configure("mystyle.Treeview.Heading", font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
-    # style.layout("mystyle.Treeview", [('mystyle.Treeview.treearea', {'sticky': 'nswe'})])
+    style = ttk.Style()
+    style.configure("mystyle.Treeview", highlightthickness=0, bd=0, font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
+    style.configure("mystyle.Treeview.Heading", font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
+    style.layout("mystyle.Treeview", [('mystyle.Treeview.treearea', {'sticky': 'nswe'})])
 
-    rightSwipeListbox = ttk.Treeview(tableFrame, columns=("#", "Name", "Match Percentage", "Image Count", "Question Count"), style='mystyle.Treeview')
+    rightSwipeListbox = ttk.Treeview(tableFrame, columns=("#", "Name", "Match Percentage", "Image Count", "Word Count", "Question Count"), style='mystyle.Treeview')
     rightSwipeListbox.pack(pady=(20, 0))
     rightSwipeListbox.column('#0', width=0, stretch=tk.NO)
     rightSwipeListbox.column('#1', anchor=tk.CENTER, width=60)
@@ -81,13 +81,15 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
     rightSwipeListbox.column('#3', anchor=tk.CENTER, width=120)
     rightSwipeListbox.column('#4', anchor=tk.CENTER, width=120)
     rightSwipeListbox.column('#5', anchor=tk.CENTER, width=120)
+    rightSwipeListbox.column('#6', anchor=tk.CENTER, width=120)
     rightSwipeListbox.heading('#1', text="#")
     rightSwipeListbox.heading('#2', text="Name")
     rightSwipeListbox.heading('#3', text="Match %")
     rightSwipeListbox.heading('#4', text="Images")
-    rightSwipeListbox.heading('#5', text="Questions")
+    rightSwipeListbox.heading('#5', text="Words")
+    rightSwipeListbox.heading('#6', text="Questions")
     for i in range(len(swipeList)):
         rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(rightSwipeListbox, swipeList))
-        rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3]))
+        rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3],swipeList[i][4]))
     tk.Button(bottomFrame, text="OK", command=lambda: finalDisplay.destroy(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
     finalDisplay.update()

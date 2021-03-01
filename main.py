@@ -1,6 +1,7 @@
 from login import login
 from settingsChange import swipesEntrybox, checkbuttonClick, percentageEntrybox, imagesEntrybox, wordsEntrybox, questionsEntrybox, checkInt
 from configSetup import readConfigFile, createConfigFile
+from bodyTypeEdit import bodyTypeEdit
 from resourcePath import resourcePath
 import tkinter as tk
 import os
@@ -8,13 +9,15 @@ import os
 # main driver code
 bg = "#282f3b"
 secondary_bg = "#ff4ec0"
+tertiary_bg = '#47477f'
+
 root = tk.Tk()
 root.title("OkCupid Smart Swipe")
 ws = root.winfo_screenwidth() # width of the screen
 hs = root.winfo_screenheight() # height of the screen
-x = (ws/2) - (1200/2)
+x = (ws/2) - (1400/2)
 y = (hs/2) - (400/2)
-root.geometry('%dx%d+%d+%d' % (1200, 400, x, y))
+root.geometry('%dx%d+%d+%d' % (1400, 400, x, y))
 root.configure(bg=bg)
 
 # retrieve user settings
@@ -37,7 +40,7 @@ swipesEntry = tk.Entry(swipesContainer, width=5, textvariable=swipes, validate="
 # validate input
 validate = (swipesEntry.register(checkInt))
 swipesEntry.configure(validatecommand=(validate, '%S', '%P', "swipes"))
-swipesEntry.pack(anchor="w", padx=(3, 0), pady=(0, 20))
+swipesEntry.pack(anchor="w", padx=(3, 0), pady=(0, 22))
 
 # compatibility percentage threshold selection
 compatibilityContainer = tk.Frame(optionsTopRow, bg=bg)
@@ -53,7 +56,7 @@ compatibilityEntry.pack(anchor="w", padx=(3, 0))
 if not options['Check Percentage'].get():
     compatibilityEntry.config(state=tk.DISABLED)
 compatibilityCheckbutton = tk.Checkbutton(compatibilityContainer, variable=options['Check Percentage'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(compatibilityEntry, "Check Percentage"))
-compatibilityCheckbutton.pack(anchor="w", pady=(0, 0))
+compatibilityCheckbutton.pack(anchor="w", pady=(10, 0))
 
 # number of images threshold selection
 imagesContainer = tk.Frame(optionsTopRow, bg=bg)
@@ -102,6 +105,12 @@ if not options['Check Questions'].get():
     questionsEntry.config(state=tk.DISABLED)
 questionsCheckbutton = tk.Checkbutton(questionsContainer, variable=options['Check Questions'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(questionsEntry, "Check Questions"))
 questionsCheckbutton.pack(anchor="w", pady=(10, 0))
+
+# number of questions threshold selection
+buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
+buttonsContainer.pack(side="left", padx=(50, 0))
+bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white").pack(pady=(0, 10))
+ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white").pack(pady=(10, 0))
 
 startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(35, 0))
 bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(60, 0))
