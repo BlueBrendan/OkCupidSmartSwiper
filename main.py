@@ -110,10 +110,13 @@ questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 # number of questions threshold selection
 buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
 buttonsContainer.pack(side="left", padx=(50, 0))
-bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white").pack(pady=(0, 10))
-ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white").pack(pady=(10, 0))
+bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bodyTypeButton, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+bodyTypeButton.pack(pady=(0, 10))
+ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, ethnicityButton, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+ethnicityButton.pack(pady=(10, 0))
 
-startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(35, 0))
+startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login([startButton, bodyTypeButton, ethnicityButton]), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
+startButton.pack(pady=(35, 0))
 bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(60, 0))
 root.mainloop()
 

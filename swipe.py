@@ -26,12 +26,12 @@ def waitForProfile(driver):
     except:
         waitForProfile(driver)
 
-def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList):
+def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons):
     empty = waitForCardDeck(driver, False)
     if empty:
         driver.quit()
         resultsDisplay.destroy()
-        createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty)
+        createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons)
     else:
         # check compatibility percentage
         matchPercentage = driver.find_element_by_class_name('cardsummary-item.cardsummary-match').text
@@ -123,8 +123,8 @@ def swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, to
         updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeCount, leftSwipeCount, rightSwipeCount)
         resultsDisplay.update()
         if totalSwipeCount < options['Number of Swipes'].get():
-            swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList)
+            swipe(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons)
         else:
             driver.quit()
             resultsDisplay.destroy()
-            createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty)
+            createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons)

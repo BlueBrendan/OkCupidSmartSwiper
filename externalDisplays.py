@@ -38,7 +38,12 @@ def updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeC
 def openProfile(rightSwipeListbox, swipeList):
     webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][5])
 
-def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty):
+def closeWindow(window, buttons):
+    window.destroy()
+    for button in buttons:
+        button.config(state=tk.NORMAL)
+
+def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons):
     finalDisplay = tk.Toplevel()
     finalDisplay.title("Final Results")
     finalDisplay.configure(bg=bg)
@@ -91,5 +96,5 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
     for i in range(len(swipeList)):
         rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(rightSwipeListbox, swipeList))
         rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3],swipeList[i][4]))
-    tk.Button(bottomFrame, text="OK", command=lambda: finalDisplay.destroy(), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
+    tk.Button(bottomFrame, text="OK", command=lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(finalDisplay, buttons), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
     finalDisplay.update()

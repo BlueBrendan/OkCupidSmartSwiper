@@ -34,7 +34,13 @@ def toggleBodyType(listbox, options, tertiary_bg, quaternary_bg):
     with open(resourcePath('Settings.txt'), 'wt') as file:
         file.write(CONFIG_FILE.replace(str(originalBodyTypes), str(newBodyTypes)))
 
-def bodyTypeEdit(options, bg, secondary_bg, tertiary_bg):
+def onClose(button, window):
+    button.config(state=tk.NORMAL)
+    window.destroy()
+
+def bodyTypeEdit(options, button, bg, secondary_bg, tertiary_bg):
+    # disable body type button until window is closed
+    button.config(state=tk.DISABLED)
     quaternary_bg = "#2f3346"
     bodyTypeWindow = tk.Toplevel()
     bodyTypeWindow.title("Body Type Preferences")
@@ -62,3 +68,5 @@ def bodyTypeEdit(options, bg, secondary_bg, tertiary_bg):
     description = tk.Frame(bodyTypeWindow, bg=bg)
     description.pack()
     tk.Label(description, text="Disabling a body type will swipe left\non all profiles identifying as that body type", font=('Symphonie Grotesque', 15), fg="white", bg=bg, justify='left').pack(pady=(15, 0))
+
+    bodyTypeWindow.protocol("WM_DELETE_WINDOW", lambda button=button, bodyTypeWindow=bodyTypeWindow: onClose(button, bodyTypeWindow))
