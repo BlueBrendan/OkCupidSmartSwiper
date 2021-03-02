@@ -3,6 +3,7 @@ from settingsChange import swipesEntrybox, checkbuttonClick, percentageEntrybox,
 from configSetup import readConfigFile, createConfigFile
 from bodyTypeEdit import bodyTypeEdit
 from ethnicityEdit import ethnicityEdit
+from phraseEdit import phraseEdit
 from resourcePath import resourcePath
 import tkinter as tk
 import os
@@ -38,7 +39,7 @@ swipesContainer.pack(side="left")
 swipesContainerTitle = tk.Label(swipesContainer, text="Number of\nSwipes to Perform (1-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 swipes = tk.StringVar(value=options['Number of Swipes'].get())
 swipes.trace("w", lambda name, index, mode, swipes=swipes: swipesEntrybox(swipes))
-swipesEntry = tk.Entry(swipesContainer, width=5, textvariable=swipes, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+swipesEntry = tk.Entry(swipesContainer, width=5, textvariable=swipes, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (swipesEntry.register(checkInt))
 swipesEntry.configure(validatecommand=(validate, '%S', '%P', "swipes"))
@@ -50,7 +51,7 @@ compatibilityContainer.pack(side="left", padx=(50, 0))
 compatibilityContainerTitle = tk.Label(compatibilityContainer, text="Minimum Compatibility\nPercentage (0-100)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 percentage = tk.StringVar(value=options['Minimum Percentage'].get())
 percentage.trace("w", lambda name, index, mode, percentage=percentage: percentageEntrybox(percentage))
-compatibilityEntry = tk.Entry(compatibilityContainer, width=5, textvariable=percentage, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+compatibilityEntry = tk.Entry(compatibilityContainer, width=5, textvariable=percentage, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (compatibilityEntry.register(checkInt))
 compatibilityEntry.configure(validatecommand=(validate, '%S', '%P', "compatibility"))
@@ -66,7 +67,7 @@ imagesContainer.pack(side="left", padx=(50, 0))
 imagesContainerTitle = tk.Label(imagesContainer, text="Minimum Number\nof Images (1-9)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 images = tk.StringVar(value=options['Minimum Number of Images'].get())
 images.trace("w", lambda name, index, mode, images=images: imagesEntrybox(images))
-imagesEntry = tk.Entry(imagesContainer, width=5, textvariable=images, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+imagesEntry = tk.Entry(imagesContainer, width=5, textvariable=images, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (imagesEntry.register(checkInt))
 imagesEntry.configure(validatecommand=(validate, '%S', '%P', "images"))
@@ -82,7 +83,7 @@ wordsContainer.pack(side="left", padx=(50, 0))
 wordsContainerTitle = tk.Label(wordsContainer, text="Minimum Word\nCount in Bio (0-300)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 words = tk.StringVar(value=options['Minimum Word Count'].get())
 words.trace("w", lambda name, index, mode, words=words: wordsEntrybox(words))
-wordsEntry = tk.Entry(wordsContainer, width=5, textvariable=words, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+wordsEntry = tk.Entry(wordsContainer, width=5, textvariable=words, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (wordsEntry.register(checkInt))
 wordsEntry.configure(validatecommand=(validate, '%S', '%P', "words"))
@@ -98,7 +99,7 @@ questionsContainer.pack(side="left", padx=(50, 0))
 questionsContainerTitle = tk.Label(questionsContainer, text="Minimum Number\nof Questions Answered (0-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 questions = tk.StringVar(value=options['Minimum Questions Answered'].get())
 questions.trace("w", lambda name, index, mode, questions=questions: questionsEntrybox(questions))
-questionsEntry = tk.Entry(questionsContainer, width=5, textvariable=questions, validate="key", font=("Proxima Nova Rg", 11), highlightbackground="black")
+questionsEntry = tk.Entry(questionsContainer, width=5, textvariable=questions, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (questionsEntry .register(checkInt))
 questionsEntry.configure(validatecommand=(validate, '%S', '%P', "questions"))
@@ -111,10 +112,13 @@ questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 # number of questions threshold selection
 buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
 buttonsContainer.pack(side="left", padx=(50, 0))
-bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bodyTypeButton, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
-bodyTypeButton.pack(pady=(0, 10))
-ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, ethnicityButton, bg, secondary_bg, tertiary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
-ethnicityButton.pack(pady=(10, 0))
+bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bodyTypeButton, bg, secondary_bg, tertiary_bg), width=8, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+bodyTypeButton.pack(pady=(0, 15))
+ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, ethnicityButton, bg, secondary_bg, tertiary_bg), width=8, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+ethnicityButton.pack(pady=(0, 15))
+phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phraseEdit(options, phrasesButton, bg, secondary_bg, tertiary_bg), width=8, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+phrasesButton.pack()
+
 
 startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login([startButton, bodyTypeButton, ethnicityButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
 startButton.pack(pady=(35, 0))

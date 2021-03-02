@@ -33,8 +33,8 @@ def login(buttons, bg, secondary_bg):
     options = readConfigFile(bg, secondary_bg)
 
     # open selenium
-    profile = FirefoxProfile("/home/brendan/.mozilla/firefox/5czu9m5r.default-release")
-    driver = webdriver.Firefox(executable_path=resourcePath('geckodriver'), firefox_profile=profile)
+    # profile = FirefoxProfile("/home/brendan/.mozilla/firefox/5czu9m5r.default-release")
+    driver = webdriver.Firefox(executable_path=resourcePath('geckodriver'))
     driver.maximize_window()
     driver.get("https://www.okcupid.com/home")
     waitForLogin(driver, bg, secondary_bg)

@@ -916,3 +916,194 @@ JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.
 
 ###!!! [Child][MessageChannel] Error: (msgtype=0x5C0009,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
 
+1614635546417	geckodriver	INFO	Listening on 127.0.0.1:35503
+1614635556347	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiledFzt3R"
+1614635557996	Marionette	INFO	Listening on port 40285
+1614635558067	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: undefined, line 0: Error: frame.state is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: resource://gre/modules/ExtensionContent.jsm, line 571: TypeError: PrecompiledScript.executeInGlobal: Argument 1 is not an object.
+JavaScript warning: moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/background.js, line 0: Successfully compiled asm.js code (total compilation time 1ms)
+JavaScript error: undefined, line 0: Error: frame.state is undefined
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-main.js, line 1: Error: Could not establish connection. Receiving end does not exist.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-vendors-main.js, line 95: TypeError: r.data is null
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h0-vendors-main.js, line 95: TypeError: r.data is null
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+Extension error: Error: Type error for parameter tabId (Integer -1 is too small (must be at least 0)) for tabs.get. moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js 143
+[[Exception stack
+updatePageFrameStructure@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:143:20
+@moz-extension://d2ec5e0a-5903-4966-b91d-e3406d37093a/ext/background.js:246:29
+Current stack
+applySafeWithoutClone@resource://gre/modules/ExtensionCommon.jsm:622:13
+fire@resource://gre/modules/ExtensionChild.jsm:806:37
+recvRunListener@resource://gre/modules/ExtensionChild.jsm:810:13
+_recv@resource://gre/modules/ConduitsChild.jsm:78:20
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:184:20
+run@resource://gre/modules/ConduitsChild.jsm:175:30
+receiveMessage/<@resource://gre/modules/ConduitsChild.jsm:176:46
+receiveMessage@resource://gre/modules/ConduitsChild.jsm:176:31
+]]
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.ce1a7a1b882bae968530.min.js, line 29: Error: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.ce1a7a1b882bae968530.min.js, line 29: Error: NetworkError when attempting to fetch resource.
+JavaScript error: moz-extension://99dd8ba4-9367-4f13-8a21-ebdddc708c22/h1-check.js, line 1: TypeError: i.default.detectStore(...) is undefined
+1614635922717	Marionette	INFO	Stopped listening on port 40285
+1614638128760	geckodriver	INFO	Listening on 127.0.0.1:46463
+1614638128776	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFqi2CR"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614638130518	Marionette	INFO	Listening on port 46439
+1614638130598	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.ce1a7a1b882bae968530.min.js, line 45: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1614638401661	Marionette	INFO	Stopped listening on port 46439
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+console.warn: services.settings: main/password-recipes sync interrupted by shutdown
+console.warn: services.settings: main/message-groups sync interrupted by shutdown
+console.warn: services.settings: main/search-default-override-allowlist sync interrupted by shutdown
+console.warn: services.settings: main/partitioning-exempt-urls sync interrupted by shutdown
+console.warn: services.settings: main/public-suffix-list sync interrupted by shutdown
+1614644942899	geckodriver	INFO	Listening on 127.0.0.1:41381
+1614644942914	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofiletN3GHE"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614644944790	Marionette	INFO	Listening on port 44265
+1614644944836	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1614645284051	Marionette	INFO	Stopped listening on port 44265
+1614645427657	geckodriver	INFO	Listening on 127.0.0.1:41013
+1614645427672	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFM5fCW"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614645429553	Marionette	INFO	Listening on port 39057
+1614645429595	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.ce1a7a1b882bae968530.min.js, line 45: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1614645618122	Marionette	INFO	Stopped listening on port 39057

@@ -43,12 +43,17 @@ def inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 
         imageElements = driver.find_elements_by_class_name('fadein-image.image_wrapper.loaded')
         imageCount = len(imageElements)
 
-        # check bio word count
+        # check bio word count and content
         bioElements = driver.find_elements_by_class_name('qmessays-essay')
         wordCount = 0
+        phrasePass = False
         for i in range(len(bioElements)):
             if len(bioElements[i].text) > 0:
                 wordCount += (bioElements[i].text.count(' ') + 1)
+            for phrase in options['Phrases']:
+                if phrase.lower() in bioElements[i].text.lower():
+                    phrasePass = True
+                    break
 
         # check body type (if applicable)
         bodyTypePass = False
@@ -72,7 +77,7 @@ def inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 
                         break
         except:
             pass
-        if bodyTypePass or ethnicityPass:
+        if bodyTypePass or ethnicityPass or phrasePass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
         elif options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():
