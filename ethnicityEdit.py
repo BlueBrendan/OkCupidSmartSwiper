@@ -1,4 +1,4 @@
-from resourcePath import resourcePath
+from settings import resourcePath
 import tkinter as tk
 
 invalid_color = '#801212'

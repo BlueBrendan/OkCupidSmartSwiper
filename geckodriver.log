@@ -1272,3 +1272,18 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 
 ###!!! [Child][MessageChannel] Error: (msgtype=0x6C0027,name=PNecko::Msg_RemoveRequestContext) Channel closing: too late to send/recv, messages will be lost
 
+1614657305426	geckodriver	INFO	Listening on 127.0.0.1:59945
+1614657305442	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilezDvHwc"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614657307146	Marionette	INFO	Listening on port 37573
+1614657307263	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.ce1a7a1b882bae968530.min.js, line 45: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.ce1a7a1b882bae968530.min.js, line 45: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1614657489607	Marionette	INFO	Stopped listening on port 37573
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

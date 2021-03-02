@@ -1,10 +1,8 @@
 from handleStartup import login
-from settingsChange import swipesEntrybox, checkbuttonClick, percentageEntrybox, imagesEntrybox, wordsEntrybox, questionsEntrybox, checkInt
-from configSetup import readConfigFile, createConfigFile
+from settings import readConfigFile, createConfigFile, zeroEntrybox, nonZeroEntrybox, checkbuttonClick, checkInt, resourcePath
 from bodyTypeEdit import bodyTypeEdit
 from ethnicityEdit import ethnicityEdit
 from phraseEdit import phraseEdit
-from resourcePath import resourcePath
 import tkinter as tk
 import os
 
@@ -38,7 +36,7 @@ swipesContainer = tk.Frame(optionsTopRow, bg=bg)
 swipesContainer.pack(side="left")
 swipesContainerTitle = tk.Label(swipesContainer, text="Number of\nSwipes to Perform (0-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 swipes = tk.StringVar(value=options['Number of Swipes'].get())
-swipes.trace("w", lambda name, index, mode, swipes=swipes: swipesEntrybox(swipes))
+swipes.trace("w", lambda name, index, mode, swipes=swipes: zeroEntrybox(swipes, "Number of Swipes"))
 swipesEntry = tk.Entry(swipesContainer, width=5, textvariable=swipes, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (swipesEntry.register(checkInt))
@@ -50,7 +48,7 @@ compatibilityContainer = tk.Frame(optionsTopRow, bg=bg)
 compatibilityContainer.pack(side="left", padx=(50, 0))
 compatibilityContainerTitle = tk.Label(compatibilityContainer, text="Minimum Compatibility\nPercentage (0-100)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 percentage = tk.StringVar(value=options['Minimum Percentage'].get())
-percentage.trace("w", lambda name, index, mode, percentage=percentage: percentageEntrybox(percentage))
+percentage.trace("w", lambda name, index, mode, percentage=percentage: zeroEntrybox(percentage, 'Minimum Percentage'))
 compatibilityEntry = tk.Entry(compatibilityContainer, width=5, textvariable=percentage, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (compatibilityEntry.register(checkInt))
@@ -66,7 +64,7 @@ imagesContainer = tk.Frame(optionsTopRow, bg=bg)
 imagesContainer.pack(side="left", padx=(50, 0))
 imagesContainerTitle = tk.Label(imagesContainer, text="Minimum Number\nof Images (1-9)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 images = tk.StringVar(value=options['Minimum Number of Images'].get())
-images.trace("w", lambda name, index, mode, images=images: imagesEntrybox(images))
+images.trace("w", lambda name, index, mode, images=images: nonZeroEntrybox(images, 'Minimum Number of Images'))
 imagesEntry = tk.Entry(imagesContainer, width=5, textvariable=images, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (imagesEntry.register(checkInt))
@@ -82,7 +80,7 @@ wordsContainer = tk.Frame(optionsTopRow, bg=bg)
 wordsContainer.pack(side="left", padx=(50, 0))
 wordsContainerTitle = tk.Label(wordsContainer, text="Minimum Word\nCount in Bio (0-300)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 words = tk.StringVar(value=options['Minimum Word Count'].get())
-words.trace("w", lambda name, index, mode, words=words: wordsEntrybox(words))
+words.trace("w", lambda name, index, mode, words=words: zeroEntrybox(words, 'Minimum Word Count'))
 wordsEntry = tk.Entry(wordsContainer, width=5, textvariable=words, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (wordsEntry.register(checkInt))
@@ -98,7 +96,7 @@ questionsContainer = tk.Frame(optionsTopRow, bg=bg)
 questionsContainer.pack(side="left", padx=(50, 0))
 questionsContainerTitle = tk.Label(questionsContainer, text="Minimum Number\nof Questions Answered (0-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 questions = tk.StringVar(value=options['Minimum Questions Answered'].get())
-questions.trace("w", lambda name, index, mode, questions=questions: questionsEntrybox(questions))
+questions.trace("w", lambda name, index, mode, questions=questions: zeroEntrybox(questions, 'Minimum Questions Answered'))
 questionsEntry = tk.Entry(questionsContainer, width=5, textvariable=questions, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
 # validate input
 validate = (questionsEntry .register(checkInt))

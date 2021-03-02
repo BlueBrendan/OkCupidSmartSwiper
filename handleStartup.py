@@ -1,8 +1,7 @@
 from selenium import webdriver
-from resourcePath import resourcePath
 from inspectProfile import inspect
 from externalDisplays import createResultsDisplay
-from configSetup import readConfigFile, createConfigFile
+from settings import readConfigFile, createConfigFile, resourcePath
 from selenium.webdriver.firefox.webdriver import FirefoxProfile
 import tkinter as tk
 import time

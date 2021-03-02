@@ -1,10 +1,10 @@
-from resourcePath import resourcePath
+from settings import resourcePath
 import tkinter as tk
 
 invalid_color = '#801212'
 invalid_selection = '#9c1616'
 
-def selectPhrase(listbox, button, options):
+def selectPhrase(button):
     try:
         button.config(state=tk.NORMAL)
     except:
@@ -105,7 +105,7 @@ def phraseEdit(options, button, bg, secondary_bg, tertiary_bg):
     for index, phrase in enumerate(options['Phrases']):
         phraseListbox.insert(tk.END, phrase)
     phraseListbox.pack(pady=(35, 0))
-    phraseListbox.bind('<<ListboxSelect>>', lambda event, listbox=phraseListbox: selectPhrase(listbox, removeButton, options))
+    phraseListbox.bind('<<ListboxSelect>>', lambda event, listbox=phraseListbox: selectPhrase(removeButton))
 
     buttonContainer = tk.Frame(phraseWindow, bg=bg)
     buttonContainer.pack(pady=(20, 0))
