@@ -36,7 +36,7 @@ optionsTopRow.pack(pady=(40, 0))
 # number of swipes to perform
 swipesContainer = tk.Frame(optionsTopRow, bg=bg)
 swipesContainer.pack(side="left")
-swipesContainerTitle = tk.Label(swipesContainer, text="Number of\nSwipes to Perform (1-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
+swipesContainerTitle = tk.Label(swipesContainer, text="Number of\nSwipes to Perform (0-1000)", font=('Symphonie Grotesque', 14), fg="white", justify="left", bg=bg).pack()
 swipes = tk.StringVar(value=options['Number of Swipes'].get())
 swipes.trace("w", lambda name, index, mode, swipes=swipes: swipesEntrybox(swipes))
 swipesEntry = tk.Entry(swipesContainer, width=5, textvariable=swipes, validate="key", font=("Symphonie Grotesque", 14), highlightbackground="black")
@@ -120,7 +120,7 @@ phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phra
 phrasesButton.pack()
 
 
-startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login([startButton, bodyTypeButton, ethnicityButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
+startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login([startButton, bodyTypeButton, ethnicityButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
 startButton.pack(pady=(35, 0))
 bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists solely to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(60, 0))
 root.mainloop()

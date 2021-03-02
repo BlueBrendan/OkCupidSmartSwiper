@@ -40,5 +40,5 @@ def readConfigFile(bg, secondary_bg):
 def createConfigFile(bg, secondary_bg):
     # create settings file
     file = open("Settings.txt", 'w')
-    file.write("Number of Swipes:500\nCheck Percentage:True\nMinimum Percentage:95\nCheck Images:True\nMinimum Number of Images:3\nCheck Words:True\nMinimum Word Count:100\nCheck Questions:True\nMinimum Questions Answered:150\nBody Types:\nEthnicities:\nPhrases:fluent in sarcasm\n")
+    file.write("Number of Swipes:500\nCheck Percentage:True\nMinimum Percentage:95\nCheck Images:True\nMinimum Number of Images:3\nCheck Words:True\nMinimum Word Count:120\nCheck Questions:True\nMinimum Questions Answered:150\nBody Types:\nEthnicities:\nPhrases:fluent in sarcasm,can't see likes,cant see likes,handle me at my worst\n")
     file.close()

@@ -62,7 +62,9 @@ def loginScreen(driver, bg, secondary_bg):
 def checkForCards(driver, phoneLoginScreen, bg, secondary_bg):
     try:
         phoneLoginScreen.destroy()
-        driver.find_element_by_class_name('cardsummary')
-    except:
+        driver.find_element_by_class_name('OkModalContent.reactmodal.signin-modal.login-modal.login-modal-icon-cross')
         loginScreen(driver, bg, secondary_bg)
+    except:
+        pass
+
 

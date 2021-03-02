@@ -3,7 +3,7 @@ from externalDisplays import updateResultsDisplay, createFinalDisplay
 import time
 
 def waitForCardDeck(driver, value):
-    time.sleep(0.4)
+    time.sleep(0.3)
     try:
         driver.find_element_by_class_name("cardsummary")
         value = False
@@ -21,6 +21,7 @@ def waitForProfile(driver):
     time.sleep(0.25)
     try:
         driver.find_element_by_class_name('profile-basics-asl-match')
+        driver.find_elements_by_class_name("profile-questions-filter-count")
         return
     except:
         waitForProfile(driver)
@@ -28,6 +29,10 @@ def waitForProfile(driver):
 def inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons):
     empty = waitForCardDeck(driver, False)
     if empty:
+        driver.quit()
+        resultsDisplay.destroy()
+        createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons)
+    elif totalSwipeCount >= options['Number of Swipes'].get():
         driver.quit()
         resultsDisplay.destroy()
         createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons)
@@ -126,9 +131,4 @@ def inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 
         # update results display
         updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeCount, leftSwipeCount, rightSwipeCount)
         resultsDisplay.update()
-        if totalSwipeCount < options['Number of Swipes'].get():
-            inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons)
-        else:
-            driver.quit()
-            resultsDisplay.destroy()
-            createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons)
+        inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons)

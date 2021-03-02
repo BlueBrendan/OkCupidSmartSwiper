@@ -5,6 +5,9 @@ def profileLeftSwipe(driver):
     pillButtons = driver.find_element_by_class_name("profile-userinfo-buttons")
     passButton = pillButtons.find_element_by_id("pass-button")
     passButton.click()
+    time.sleep(0.25)
+    # return to discover
+    driver.get("https://www.okcupid.com/discover")
 
 def profileRightSwipe(driver):
     time.sleep(0.25)
