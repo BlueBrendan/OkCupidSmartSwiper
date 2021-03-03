@@ -2,7 +2,7 @@ from selenium import webdriver
 from inspectProfile import inspect
 from externalDisplays import createResultsDisplay
 from settings import readConfigFile, createConfigFile, resourcePath
-from selenium.webdriver.firefox.webdriver import FirefoxProfile
+from sys import platform
 import tkinter as tk
 import time
 import os
@@ -31,9 +31,11 @@ def login(buttons, bg, secondary_bg):
         createConfigFile(bg, secondary_bg)
     options = readConfigFile(bg, secondary_bg)
 
-    # open selenium
-    # profile = FirefoxProfile("/home/brendan/.mozilla/firefox/5czu9m5r.default-release")
-    driver = webdriver.Firefox(executable_path=resourcePath('geckodriver'))
+    # open selenium (MacOS currently not supported)
+    if platform == 'win32':
+        driver = webdriver.Firefox(executable_path=resourcePath('geckodriver.exe'))
+    else:
+        driver = webdriver.Firefox(executable_path=resourcePath('geckodriver'))
     driver.maximize_window()
     driver.get("https://www.okcupid.com/home")
     waitForLogin(driver, bg, secondary_bg)
