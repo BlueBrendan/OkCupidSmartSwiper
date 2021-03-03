@@ -53,6 +53,7 @@ def loginScreen(driver, bg, secondary_bg):
     x = (ws / 2) - (550 / 2)
     y = (hs / 2) - (250 / 2)
     loginScreenWindow.geometry('%dx%d+%d+%d' % (550, 250, x, y))
+    loginScreenWindow.iconbitmap(resourcePath('favicon.ico'))
     infoFrame = tk.Frame(loginScreenWindow, bg=bg)
     infoFrame.pack(fill='x', pady=(25, 0))
     tk.Label(infoFrame, text="The login screen has been detected. Enter your credentials and press the button below once you have reached the OkCupid homepage\n\nThis is required once per session because Selenium does not save user data", wraplength=500, bg=bg, font=('Symphonie Grotesque', 13), fg="white").pack(pady=(10, 0))

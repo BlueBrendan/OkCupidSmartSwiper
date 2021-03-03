@@ -1304,3 +1304,12 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1614768228554	geckodriver	INFO	Listening on 127.0.0.1:50673
+1614768231639	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\brend\\AppData\\Local\\Temp\\rust_mozprofile2e6RTn"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614768233819	Marionette	INFO	Listening on port 50681
+1614768234293	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614768289477	Marionette	INFO	Stopped listening on port 50681
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

@@ -38,7 +38,7 @@ def phraseAddPrompt(phraseListbox, options, bg, secondary_bg):
     y = (hs / 2) - (180 / 2)
     addPhraseWindow.geometry('%dx%d+%d+%d' % (500, 180, x, y))
     addPhraseWindow.configure(bg=bg)
-
+    addPhraseWindow.iconbitmap(resourcePath('favicon.ico'))
     mainContainer = tk.Frame(addPhraseWindow, bg=bg)
     mainContainer.pack()
     newPhrase = tk.StringVar()

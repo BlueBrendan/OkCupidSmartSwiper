@@ -3,27 +3,29 @@ from settings import readConfigFile, createConfigFile, zeroEntrybox, nonZeroEntr
 from bodyTypeEdit import bodyTypeEdit
 from ethnicityEdit import ethnicityEdit
 from phraseEdit import phraseEdit
+from sys import platform
 import tkinter as tk
 import os
-from matplotlib import font_manager
-from ctypes import windll, byref, create_unicode_buffer, create_string_buffer
 
-# install font if not present
-FR_PRIVATE  = 0x10
-FR_NOT_ENUM = 0x20
-def loadfont(fontpath, private=True, enumerable=False):
-    if isinstance(fontpath, bytes):
-        pathbuf = create_string_buffer(fontpath)
-        AddFontResourceEx = windll.gdi32.AddFontResourceExA
-    elif isinstance(fontpath, str):
-        pathbuf = create_unicode_buffer(fontpath)
-        AddFontResourceEx = windll.gdi32.AddFontResourceExW
-    else: raise TypeError('fontpath must be of type str or unicode')
-    flags = (FR_PRIVATE if private else 0) | (FR_NOT_ENUM if not enumerable else 0)
-    numFontsAdded = AddFontResourceEx(byref(pathbuf), flags, 0)
-    return bool(numFontsAdded)
+if platform == 'win32':
+    from ctypes import windll, byref, create_unicode_buffer, create_string_buffer
 
-loadfont(resourcePath('Symphonie Grotesque.ttf'))
+    # install font if not present
+    FR_PRIVATE  = 0x10
+    FR_NOT_ENUM = 0x20
+    def loadfont(fontpath, private=True, enumerable=False):
+        if isinstance(fontpath, bytes):
+            pathbuf = create_string_buffer(fontpath)
+            AddFontResourceEx = windll.gdi32.AddFontResourceExA
+        elif isinstance(fontpath, str):
+            pathbuf = create_unicode_buffer(fontpath)
+            AddFontResourceEx = windll.gdi32.AddFontResourceExW
+        else: raise TypeError('fontpath must be of type str or unicode')
+        flags = (FR_PRIVATE if private else 0) | (FR_NOT_ENUM if not enumerable else 0)
+        numFontsAdded = AddFontResourceEx(byref(pathbuf), flags, 0)
+        return bool(numFontsAdded)
+
+    loadfont(resourcePath('Symphonie Grotesque.ttf'))
 
 bg = "#282f3b"
 secondary_bg = "#ff4ec0"
@@ -31,13 +33,14 @@ tertiary_bg = '#47477f'
 
 # main driver code
 root = tk.Tk()
-root.title("OkCupid Smart Swipe")
+root.title("OkCupid Smart Swiper")
 ws = root.winfo_screenwidth() # width of the screen
 hs = root.winfo_screenheight() # height of the screen
 x = (ws/2) - (1400/2)
 y = (hs/2) - (400/2)
 root.geometry('%dx%d+%d+%d' % (1400, 400, x, y))
 root.configure(bg=bg)
+root.iconbitmap(resourcePath('favicon.ico'))
 
 # retrieve user settings
 if not os.path.exists(resourcePath('Settings.txt')):
@@ -46,7 +49,7 @@ options = readConfigFile(bg, secondary_bg)
 
 mainContainer = tk.Frame(root, bg=bg)
 mainContainer.pack()
-title = tk.Label(mainContainer, text="OkCupid Smart Swipe", font=('Symphonie Grotesque', 45), fg="white", bg=bg).pack(pady=(30, 0))
+title = tk.Label(mainContainer, text="OkCupid Smart Swiper", font=('Symphonie Grotesque', 45), fg="white", bg=bg).pack(pady=(30, 0))
 optionsTopRow = tk.Frame(mainContainer, bg=bg)
 optionsTopRow.pack(pady=(40, 0))
 

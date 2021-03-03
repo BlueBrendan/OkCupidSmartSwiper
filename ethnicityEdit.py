@@ -50,6 +50,7 @@ def ethnicityEdit(options, button, bg, secondary_bg, tertiary_bg):
     y = (hs / 2) - (400 / 2)
     ethnicityWindow.geometry('%dx%d+%d+%d' % (500, 400, x, y))
     ethnicityWindow.configure(bg=bg)
+    ethnicityWindow.iconbitmap(resourcePath('favicon.ico'))
 
     listboxContainer = tk.Frame(ethnicityWindow, bg=bg)
     listboxContainer.pack()

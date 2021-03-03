@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from settings import resourcePath
 import webbrowser
 
 bg = "#282f3b"
@@ -11,7 +12,7 @@ def createResultsDisplay(options):
     resultsDisplay.title("Progress Window")
     resultsDisplay.configure(bg=bg)
     resultsDisplay.geometry("600x180+0+0")
-
+    resultsDisplay.iconbitmap(resourcePath('favicon.ico'))
     titleFrame = tk.Frame(resultsDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
     resultsFrame = tk.Frame(resultsDisplay, bg=bg)
@@ -52,7 +53,7 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
     x = (ws / 2) - (800 / 2)
     y = (hs / 2) - (550 / 2)
     finalDisplay.geometry('%dx%d+%d+%d' % (800, 550, x, y))
-
+    finalDisplay.iconbitmap(resourcePath('favicon.ico'))
     titleFrame = tk.Frame(finalDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
     resultsFrame = tk.Frame(finalDisplay, bg=bg)

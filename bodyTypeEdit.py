@@ -50,7 +50,7 @@ def bodyTypeEdit(options, button, bg, secondary_bg, tertiary_bg):
     y = (hs / 2) - (400 / 2)
     bodyTypeWindow.geometry('%dx%d+%d+%d' % (500, 400, x, y))
     bodyTypeWindow.configure(bg=bg)
-
+    bodyTypeWindow.iconbitmap(resourcePath('favicon.ico'))
     listboxContainer = tk.Frame(bodyTypeWindow, bg=bg)
     listboxContainer.pack()
     bodyTypeListbox = tk.Listbox(listboxContainer,  font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg,  highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
