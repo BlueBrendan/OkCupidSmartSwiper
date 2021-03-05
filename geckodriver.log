@@ -1486,3 +1486,232 @@ JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e704375
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 1614903463904	Marionette	INFO	Stopped listening on port 44563
+1614908399186	geckodriver	INFO	Listening on 127.0.0.1:48475
+1614908399201	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile75ql81"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614908401014	Marionette	INFO	Listening on port 39855
+1614908401122	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614908633216	geckodriver	INFO	Listening on 127.0.0.1:40393
+1614908633232	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewqxckA"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614908635056	Marionette	INFO	Listening on port 46301
+1614908635152	Marionette	WARN	TLS certificate errors will be ignored for this session
+1614908770498	Marionette	INFO	Stopped listening on port 46301
+1614918086597	geckodriver	INFO	Listening on 127.0.0.1:46621
+1614918086613	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileOCUoxK"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614918088493	Marionette	INFO	Listening on port 46195
+1614918088537	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 68: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1614918373003	Marionette	INFO	Stopped listening on port 46195
+1614918432475	geckodriver	INFO	Listening on 127.0.0.1:52781
+1614918432491	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekISv2x"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614918434419	Marionette	INFO	Listening on port 38515
+1614918434512	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+JavaScript warning: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 2822: unreachable code after return statement
+JavaScript warning: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 2822: unreachable code after return statement
+JavaScript error: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 1986: TypeError: number_with_commas_arr[key] is undefined
+JavaScript error: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 1986: TypeError: number_with_commas_arr[key] is undefined
+JavaScript error: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 1986: TypeError: number_with_commas_arr[key] is undefined
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614918661442	geckodriver	INFO	Listening on 127.0.0.1:48037
+1614918661458	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilesLdPp7"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614918663226	Marionette	INFO	Listening on port 33125
+1614918663297	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+1614918708390	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1614918708393	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614918851334	geckodriver	INFO	Listening on 127.0.0.1:38565
+1614918851350	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilebIkjSX"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614918853085	Marionette	INFO	Listening on port 44937
+1614918853170	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1614918925354	geckodriver	INFO	Listening on 127.0.0.1:57365
+1614918925370	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewJDeET"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614918927121	Marionette	INFO	Listening on port 37271
+1614918927193	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919039582	geckodriver	INFO	Listening on 127.0.0.1:49451
+1614919039598	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUoUrI2"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919041524	Marionette	INFO	Listening on port 46511
+1614919041621	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919161052	geckodriver	INFO	Listening on 127.0.0.1:57727
+1614919161069	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileszySSH"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919162773	Marionette	INFO	Listening on port 44237
+1614919162892	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919189968	geckodriver	INFO	Listening on 127.0.0.1:42207
+1614919189984	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileWeTx8g"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919191714	Marionette	INFO	Listening on port 43309
+1614919191833	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919302500	geckodriver	INFO	Listening on 127.0.0.1:53017
+1614919302516	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRdXxDY"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919304195	Marionette	INFO	Listening on port 45225
+1614919304242	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PMessagePort::Msg_PostMessages Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919383611	geckodriver	INFO	Listening on 127.0.0.1:44513
+1614919383626	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUIaOSb"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919385372	Marionette	INFO	Listening on port 39713
+1614919385453	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919614775	geckodriver	INFO	Listening on 127.0.0.1:60545
+1614919614791	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRB0zpC"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919616662	Marionette	INFO	Listening on port 40599
+1614919616713	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1614919807955	geckodriver	INFO	Listening on 127.0.0.1:42117
+1614919807962	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileuAtgwJ"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919809786	Marionette	INFO	Listening on port 46323
+1614919809883	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919881938	geckodriver	INFO	Listening on 127.0.0.1:47697
+1614919881944	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile0H3GYo"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919883666	Marionette	INFO	Listening on port 45109
+1614919883770	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614919947340	geckodriver	INFO	Listening on 127.0.0.1:53253
+1614919947355	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile2yL7d2"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614919949051	Marionette	INFO	Listening on port 38419
+1614919949077	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614920025471	geckodriver	INFO	Listening on 127.0.0.1:41959
+1614920025487	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileTu9lLL"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614920027107	Marionette	INFO	Listening on port 35441
+1614920027240	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614920074796	geckodriver	INFO	Listening on 127.0.0.1:46029
+1614920074812	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileayiMbC"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614920076566	Marionette	INFO	Listening on port 40261
+1614920076633	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614920159411	geckodriver	INFO	Listening on 127.0.0.1:50637
+1614920159427	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilehOJitd"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614920161342	Marionette	INFO	Listening on port 45843
+1614920161451	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1614920272261	geckodriver	INFO	Listening on 127.0.0.1:52493
+1614920272276	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileRnFVds"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614920274015	Marionette	INFO	Listening on port 44215
+1614920274101	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1614920382607	geckodriver	INFO	Listening on 127.0.0.1:40801
+1614920382623	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileazxbZC"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614920384410	Marionette	INFO	Listening on port 43823
+1614920384456	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
+JavaScript warning: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 2822: unreachable code after return statement
+JavaScript warning: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 2822: unreachable code after return statement
+JavaScript error: https://wordcounter.net/min/387fb6497685181f351932331b0413b976a92761.js, line 1986: TypeError: number_with_commas_arr[key] is undefined
+1614920584038	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://marionette/content/sync.js:231:19
+TimedPromise@chrome://marionette/content/sync.js:216:10
+interaction.flushEventLoop@chrome://marionette/content/interaction.js:433:10
+webdriverClickElement@chrome://marionette/content/interaction.js:179:31
+1614920586030	Marionette	INFO	Stopped listening on port 43823
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1614920607851	geckodriver	INFO	Listening on 127.0.0.1:36271
+1614920607867	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHLfurs"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1614920609581	Marionette	INFO	Listening on port 46157
+1614920609687	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.9a60e70437520147f891.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 569: TypeError: this.contentWindow is null
+JavaScript error: resource://gre/actors/PictureInPictureChild.jsm, line 225: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'PictureInPictureToggle' has been destroyed
+1614920968289	Marionette	INFO	Stopped listening on port 46157

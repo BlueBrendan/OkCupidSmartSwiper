@@ -45,7 +45,7 @@ def phraseAddPrompt(phraseListbox, options, bg, secondary_bg):
     mainContainer.pack()
     newPhrase = tk.StringVar()
     tk.Label(mainContainer, text="Enter a new phrase", font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(pady=(20, 0))
-    tk.Entry(mainContainer, textvariable=newPhrase, width=30, font=("Symphonie Grotesque", 14), highlightbackground="black").pack(pady=(15, 0))
+    tk.Entry(mainContainer, textvariable=newPhrase, width=40, font=("Symphonie Grotesque", 14), highlightbackground="black").pack(pady=(15, 0))
     tk.Button(mainContainer, text="ADD", command=lambda: phraseAdd(phraseListbox, options, newPhrase, addPhraseWindow, bg, secondary_bg), width=5, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(25,0))
 
 def phraseAdd(phraseListbox, options, newPhrase, addPhraseWindow, bg, secondary_bg):

@@ -1,5 +1,6 @@
 from handleStartup import login
 from settings import readConfigFile, createConfigFile, zeroEntrybox, nonZeroEntrybox, checkbuttonClick, checkInt, resourcePath
+from orientationEdit import orientationEdit
 from bodyTypeEdit import bodyTypeEdit
 from ethnicityEdit import ethnicityEdit
 from phraseEdit import phraseEdit
@@ -38,8 +39,8 @@ root.title("OkCupid Smart Swiper")
 ws = root.winfo_screenwidth() # width of the screen
 hs = root.winfo_screenheight() # height of the screen
 x = (ws/2) - (1400/2)
-y = (hs/2) - (400/2)
-root.geometry('%dx%d+%d+%d' % (1400, 400, x, y))
+y = (hs/2) - (430/2)
+root.geometry('%dx%d+%d+%d' % (1400, 430, x, y))
 root.configure(bg=bg)
 if platform == 'win32':
     root.Ficonbitmap(resourcePath('favicon.ico'))
@@ -51,7 +52,7 @@ options = readConfigFile(bg, secondary_bg)
 
 mainContainer = tk.Frame(root, bg=bg)
 mainContainer.pack()
-title = tk.Label(mainContainer, text="OkCupid Smart Swiper", font=('Symphonie Grotesque', 45), fg="white", bg=bg).pack(pady=(30, 0))
+title = tk.Label(mainContainer, text="OkCupid Smart Swiper", font=('Symphonie Grotesque', 45), fg="white", bg=bg).pack(pady=(40, 0))
 optionsTopRow = tk.Frame(mainContainer, bg=bg)
 optionsTopRow.pack(pady=(40, 0))
 
@@ -134,6 +135,8 @@ questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 # number of questions threshold selection
 buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
 buttonsContainer.pack(side="left", padx=(50, 0))
+orientationButton = tk.Button(buttonsContainer, text="ORIENTATION", command=lambda: orientationEdit(options, orientationButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+orientationButton.pack(pady=(0, 15))
 bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bodyTypeButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 bodyTypeButton.pack(pady=(0, 15))
 ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, ethnicityButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
@@ -142,8 +145,8 @@ phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phra
 phrasesButton.pack()
 
 
-startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(root, [startButton, bodyTypeButton, ethnicityButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
-startButton.pack(pady=(35, 0))
+startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(root, [startButton, orientationButton, bodyTypeButton, ethnicityButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
+startButton.pack(pady=(30, 0))
 bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists solely to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(60, 0))
 root.mainloop()
 

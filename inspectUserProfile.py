@@ -49,12 +49,24 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
         wordCount = 0
         phrasePass = False
         for i in range(len(bioElements)):
-            if len(bioElements[i].text) > 0:
-                wordCount += (bioElements[i].text.count(' ') + 1)
+            passage = bioElements[i].find_element_by_css_selector('p').text
+            if len(passage) > 0:
+                wordCount += (passage.count(' ') + 1)
             for phrase in options['Phrases']:
-                if phrase.lower() in bioElements[i].text.lower():
+                if phrase.lower() in passage.lower():
                     phrasePass = True
                     break
+
+        # check orientation (if applicable)
+        orientationPass = False
+        try:
+            orientationDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--basics').text)
+            for orientation in options['Orientations']:
+                if orientation.lower() in orientationDescription.lower():
+                    orientationPass = True
+                    break
+        except:
+            pass
 
         # check body type (if applicable)
         bodyTypePass = False
@@ -67,7 +79,7 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
         except:
             pass
 
-        # check ethnicity
+        # check ethnicity (if applicable)
         ethnicityPass = False
         try:
             if not bodyTypePass:
@@ -82,7 +94,7 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
         # check for intro
 
 
-        if bodyTypePass or ethnicityPass or phrasePass:
+        if orientationPass or bodyTypePass or ethnicityPass or phrasePass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
         elif options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():
