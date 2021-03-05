@@ -1,5 +1,6 @@
 from settings import resourcePath
 import tkinter as tk
+from sys import platform
 
 invalid_color = '#801212'
 invalid_selection = '#9c1616'
@@ -50,8 +51,8 @@ def ethnicityEdit(options, button, bg, secondary_bg, tertiary_bg):
     y = (hs / 2) - (400 / 2)
     ethnicityWindow.geometry('%dx%d+%d+%d' % (500, 400, x, y))
     ethnicityWindow.configure(bg=bg)
-    ethnicityWindow.iconbitmap(resourcePath('favicon.ico'))
-
+    if platform == 'win32':
+        ethnicityWindow.iconbitmap(resourcePath('favicon.ico'))
     listboxContainer = tk.Frame(ethnicityWindow, bg=bg)
     listboxContainer.pack()
     ethnicityListbox = tk.Listbox(listboxContainer,  font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg,  highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')

@@ -26,16 +26,12 @@ def waitForProfile(driver):
     except:
         waitForProfile(driver)
 
-def inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons):
+def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons):
     empty = waitForCardDeck(driver, False)
     if empty:
-        driver.quit()
-        resultsDisplay.destroy()
-        createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons)
+        createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, titleLabel, leftLabel, rightLabel, empty, buttons, options, driver)
     elif totalSwipeCount >= options['Number of Swipes'].get():
-        driver.quit()
-        resultsDisplay.destroy()
-        createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons)
+        createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, titleLabel, leftLabel, rightLabel, empty, buttons, options, driver)
     else:
         # check compatibility percentage
         matchPercentage = driver.find_element_by_class_name('cardsummary-item.cardsummary-match').text
@@ -82,6 +78,10 @@ def inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 
                         break
         except:
             pass
+
+        # check for intro
+
+
         if bodyTypePass or ethnicityPass or phrasePass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
@@ -131,4 +131,4 @@ def inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 
         # update results display
         updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeCount, leftSwipeCount, rightSwipeCount)
         resultsDisplay.update()
-        inspect(driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons)
+        inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons)

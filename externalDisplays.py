@@ -1,4 +1,5 @@
 import tkinter as tk
+from sys import platform
 from tkinter import ttk
 from settings import resourcePath
 import webbrowser
@@ -12,7 +13,9 @@ def createResultsDisplay(options):
     resultsDisplay.title("Progress Window")
     resultsDisplay.configure(bg=bg)
     resultsDisplay.geometry("600x180+0+0")
-    resultsDisplay.iconbitmap(resourcePath('favicon.ico'))
+    if platform == 'win32':
+        resultsDisplay.iconbitmap(resourcePath('favicon.ico'))
+    resultsDisplay.attributes("-topmost", 1)
     titleFrame = tk.Frame(resultsDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
     resultsFrame = tk.Frame(resultsDisplay, bg=bg)
@@ -22,8 +25,8 @@ def createResultsDisplay(options):
     rightLabel = tk.Label()
     for index, item in enumerate(resultsDisplay.winfo_children()):
         if index == 0:
-            titleLabel = tk.Label(item, text="0 out of " + str(options["Number of Swipes"].get()) + " Swipes", font=('Symphonie Grotesque', 25), fg="white", bg=bg)
-            titleLabel.pack(pady=(15, 0))
+            titleLabel = tk.Label(item, text="0 out of " + str(options["Number of Swipes"].get()), font=('Symphonie Grotesque', 25), fg="white", bg=bg)
+            titleLabel.pack(pady=(15, 10))
         else:
             leftLabel = tk.Label(item, text="Left Swipes: 0", font=('Symphonie Grotesque', 13), fg="white", bg=bg)
             leftLabel.pack(side="left", padx=(0, 20))
@@ -39,21 +42,35 @@ def updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeC
 def openProfile(rightSwipeListbox, swipeList):
     webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][5])
 
-def closeWindow(window, buttons):
+def closeWindow(root, window, resultsDisplay, buttons, driver):
     window.destroy()
+    resultsDisplay.destroy()
     for button in buttons:
         button.config(state=tk.NORMAL)
+    driver.quit()
+    root.attributes("-topmost", 1)
+    root.attributes("-topmost", 0)
 
-def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, empty, buttons):
+def swipeAgain(root, window, resultsDisplay, titleLabel, leftLabel, rightLabel, options, buttons, driver):
+    window.destroy()
+    titleLabel.configure(text='0 out of ' + str(options["Number of Swipes"].get()))
+    leftLabel.configure(text='Left Swipes: 0')
+    rightLabel.configure(text='Right Swipes: 0')
+    resultsDisplay.update()
+    from inspectUserProfile import inspectProfileFunction
+    inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 0, 0, 0, [], buttons)
+
+def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, titleLabel, leftLabel, rightLabel, empty, buttons, options, driver):
     finalDisplay = tk.Toplevel()
     finalDisplay.title("Final Results")
     finalDisplay.configure(bg=bg)
     ws = finalDisplay.winfo_screenwidth()  # width of the screen
     hs = finalDisplay.winfo_screenheight()  # height of the screen
     x = (ws / 2) - (800 / 2)
-    y = (hs / 2) - (550 / 2)
-    finalDisplay.geometry('%dx%d+%d+%d' % (800, 550, x, y))
-    finalDisplay.iconbitmap(resourcePath('favicon.ico'))
+    y = (hs / 2) - (570 / 2)
+    finalDisplay.geometry('%dx%d+%d+%d' % (800, 570, x, y))
+    if platform == 'win32':
+        finalDisplay.iconbitmap(resourcePath('favicon.ico'))
     titleFrame = tk.Frame(finalDisplay, bg=bg)
     titleFrame.pack(fill='x', pady=(20, 0))
     resultsFrame = tk.Frame(finalDisplay, bg=bg)
@@ -97,5 +114,7 @@ def createFinalDisplay(totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeLi
     for i in range(len(swipeList)):
         rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(rightSwipeListbox, swipeList))
         rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3],swipeList[i][4]))
-    tk.Button(bottomFrame, text="OK", command=lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(finalDisplay, buttons), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
+    tk.Button(bottomFrame, text="OK", width=10, command=lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(root, finalDisplay, resultsDisplay, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
+    tk.Button(bottomFrame, text="SWIPE AGAIN", width=10, command=lambda finalDisplay=finalDisplay, buttons=buttons: swipeAgain(root, finalDisplay, resultsDisplay, titleLabel, leftLabel, rightLabel, options, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
+
     finalDisplay.update()

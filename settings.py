@@ -9,7 +9,7 @@ def resourcePath(relative_path):
 def readConfigFile(bg, secondary_bg):
     CONFIG_FILE = open(resourcePath("Settings.txt"), 'r').read()
     options = {}
-    terms = ['Number of Swipes', 'Check Percentage', 'Minimum Percentage', 'Check Images',  'Minimum Number of Images', 'Check Words',  'Minimum Word Count', 'Check Questions',  'Minimum Questions Answered', 'Body Types', 'Ethnicities', 'Phrases']
+    terms = ['Number of Swipes', 'Check Percentage', 'Minimum Percentage', 'Check Images',  'Minimum Number of Images', 'Check Words',  'Minimum Word Count', 'Check Questions',  'Minimum Questions Answered', 'Body Types', 'Ethnicities', 'Phrases', 'Check Intro']
     for term in terms:
         if term[0:5] == 'Check':
             try:
@@ -44,7 +44,7 @@ def readConfigFile(bg, secondary_bg):
 def createConfigFile(bg, secondary_bg):
     # create settings file
     file = open("Settings.txt", 'w')
-    file.write("Number of Swipes:500\nCheck Percentage:True\nMinimum Percentage:95\nCheck Images:True\nMinimum Number of Images:3\nCheck Words:True\nMinimum Word Count:120\nCheck Questions:True\nMinimum Questions Answered:150\nBody Types:\nEthnicities:\nPhrases:fluent in sarcasm,can't see likes,cant see likes,handle me at my worst\n")
+    file.write("Number of Swipes:500\nCheck Percentage:True\nMinimum Percentage:95\nCheck Images:True\nMinimum Number of Images:3\nCheck Words:True\nMinimum Word Count:120\nCheck Questions:True\nMinimum Questions Answered:150\nBody Types:\nEthnicities:\nPhrases:fluent in sarcasm,can't see likes,cant see likes,handle me at my worst\nCheck Intro:True\n")
     file.close()
 
 def zeroEntrybox(item, term):

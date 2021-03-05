@@ -5,6 +5,7 @@ from ethnicityEdit import ethnicityEdit
 from phraseEdit import phraseEdit
 from sys import platform
 import tkinter as tk
+from tkinter import *
 import os
 
 if platform == 'win32':
@@ -40,7 +41,8 @@ x = (ws/2) - (1400/2)
 y = (hs/2) - (400/2)
 root.geometry('%dx%d+%d+%d' % (1400, 400, x, y))
 root.configure(bg=bg)
-root.iconbitmap(resourcePath('favicon.ico'))
+if platform == 'win32':
+    root.Ficonbitmap(resourcePath('favicon.ico'))
 
 # retrieve user settings
 if not os.path.exists(resourcePath('Settings.txt')):
@@ -140,7 +142,7 @@ phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phra
 phrasesButton.pack()
 
 
-startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login([startButton, bodyTypeButton, ethnicityButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
+startButton = tk.Button(mainContainer, text="BEGIN SWIPING", command=lambda: login(root, [startButton, bodyTypeButton, ethnicityButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
 startButton.pack(pady=(35, 0))
 bottomText = tk.Label(mainContainer, text="OkCupid Smart Swipe is a third party utility that exists solely to enhance the swiping experience on OkCupid", font=('Symphonie Grotesque', 10), fg="white", bg=bg, highlightthickness=0).pack(pady=(60, 0))
 root.mainloop()
