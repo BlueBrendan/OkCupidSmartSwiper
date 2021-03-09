@@ -56,7 +56,7 @@ def bodyTypeEdit(options, button, bg, secondary_bg, tertiary_bg):
     listboxContainer = tk.Frame(bodyTypeWindow, bg=bg)
     listboxContainer.pack()
     bodyTypeListbox = tk.Listbox(listboxContainer,  font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg,  highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
-    bodyTypes = ['Thin', 'Average', 'Fit', 'Jacked', 'A little extra', 'Overweight', 'Curvy', 'Fully Figured']
+    bodyTypes = ['Thin', 'Average', 'Fit', 'Jacked', 'A little extra', 'Overweight', 'Curvy', 'Full Figured']
     for index, bodyType in enumerate(bodyTypes):
         bodyTypeListbox.insert(tk.END, bodyType)
         if bodyType in options['Body Types']:

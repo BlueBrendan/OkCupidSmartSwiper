@@ -1826,3 +1826,46 @@ IPDL protocol error: Handler returned error code!
 
 ###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
 
+1615289227969	geckodriver	INFO	Listening on 127.0.0.1:51985
+1615289227974	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile386crL"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615289230473	Marionette	INFO	Listening on port 39559
+1615289230506	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615289432077	Marionette	INFO	Stopped listening on port 39559
+1615289626865	geckodriver	INFO	Listening on 127.0.0.1:44241
+1615289626874	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilefsPivf"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615289628737	Marionette	INFO	Listening on port 43685
+1615289628794	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+1615290958969	Marionette	INFO	Stopped listening on port 43685
+1615291372150	geckodriver	INFO	Listening on 127.0.0.1:36543
+1615291372165	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekwbn6N"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615291373981	Marionette	INFO	Listening on port 38075
+1615291374087	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1615291465099	geckodriver	INFO	Listening on 127.0.0.1:42243
+1615291465114	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileXi53kK"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615291466945	Marionette	INFO	Listening on port 42273
+1615291467037	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1615291933209	Marionette	INFO	Stopped listening on port 42273
+1615291993945	geckodriver	INFO	Listening on 127.0.0.1:38023
+1615291993960	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileHdI7d4"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615291995957	Marionette	INFO	Listening on port 34577
+1615291995983	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1615292646870	Marionette	INFO	Stopped listening on port 34577
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+

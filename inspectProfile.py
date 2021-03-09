@@ -82,12 +82,11 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
         # check ethnicity (if applicable)
         ethnicityPass = False
         try:
-            if not bodyTypePass:
-                ethnicityDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background').text)
-                for ethnicity in options['Ethnicities']:
-                    if ethnicity.lower() in ethnicityDescription.lower():
-                        ethnicityPass = True
-                        break
+            ethnicityDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background').text)
+            for ethnicity in options['Ethnicities']:
+                if ethnicity.lower() in ethnicityDescription.lower():
+                    ethnicityPass = True
+                    break
         except:
             pass
 
