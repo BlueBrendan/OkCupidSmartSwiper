@@ -1,5 +1,5 @@
 from selenium import webdriver
-from inspectUserProfile import inspectProfileFunction
+from inspectProfile import inspectProfileFunction
 from externalDisplays import createResultsDisplay
 from settings import readConfigFile, createConfigFile, resourcePath
 from sys import platform

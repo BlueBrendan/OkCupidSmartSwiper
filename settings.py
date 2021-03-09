@@ -72,12 +72,12 @@ def nonZeroEntrybox(item, term):
 def checkbuttonClick(entrybox, term):
     CONFIG_FILE = open(resourcePath('Settings.txt'), 'r').read()
     if CONFIG_FILE[CONFIG_FILE.index(term) + len(term) + 1:CONFIG_FILE.index('\n', CONFIG_FILE.index(term) + len(term))] == "True":
-        entrybox.config(state=tk.DISABLED)
+        if type(entrybox) != bool: entrybox.config(state=tk.DISABLED)
         with open(resourcePath('Settings.txt'), 'wt') as file:
             file.write(CONFIG_FILE.replace(str(CONFIG_FILE[CONFIG_FILE.index(term) + 1:CONFIG_FILE.index(':', CONFIG_FILE.index(term)) + 1]) + "True", str(str(CONFIG_FILE[CONFIG_FILE.index(term) + 1:CONFIG_FILE.index(':', CONFIG_FILE.index(term)) + 1])) + "False"))
         file.close()
     elif CONFIG_FILE[CONFIG_FILE.index(term) + len(term) + 1:CONFIG_FILE.index('\n', CONFIG_FILE.index(term) + len(term))] == "False":
-        entrybox.config(state=tk.NORMAL)
+        if type(entrybox) != bool: entrybox.config(state=tk.NORMAL)
         with open(resourcePath('Settings.txt'), 'wt') as file:
             file.write(CONFIG_FILE.replace(str(CONFIG_FILE[CONFIG_FILE.index(term) + 1:CONFIG_FILE.index(':', CONFIG_FILE.index(term)) + 1]) + "False", str(str(CONFIG_FILE[CONFIG_FILE.index(term) + 1:CONFIG_FILE.index(':', CONFIG_FILE.index(term)) + 1])) + "True"))
         file.close()

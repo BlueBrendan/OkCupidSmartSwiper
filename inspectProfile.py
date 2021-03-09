@@ -92,9 +92,17 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
             pass
 
         # check for intro
+        intro = False
+        try:
+            driver.find_element_by_id('firstmessage2017')
+            intro = True
+        except:
+            pass
 
-
-        if orientationPass or bodyTypePass or ethnicityPass or phrasePass:
+        if options['Check Intro'].get() and intro:
+            cardDeckRightSwipe(driver)
+            rightSwipeCount += 1
+        elif orientationPass or bodyTypePass or ethnicityPass or phrasePass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
         elif options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():

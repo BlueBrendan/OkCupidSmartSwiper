@@ -57,7 +57,7 @@ def swipeAgain(root, window, resultsDisplay, titleLabel, leftLabel, rightLabel, 
     leftLabel.configure(text='Left Swipes: 0')
     rightLabel.configure(text='Right Swipes: 0')
     resultsDisplay.update()
-    from inspectUserProfile import inspectProfileFunction
+    from inspectProfile import inspectProfileFunction
     inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 0, 0, 0, [], buttons)
 
 def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, titleLabel, leftLabel, rightLabel, empty, buttons, options, driver):
