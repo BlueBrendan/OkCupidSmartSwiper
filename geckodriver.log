@@ -1755,3 +1755,74 @@ JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: 
 JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 190: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
 JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
 1615268179654	Marionette	INFO	Stopped listening on port 43275
+1615268462511	geckodriver	INFO	Listening on 127.0.0.1:34559
+1615268462529	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile1wNF3y"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615268464365	Marionette	INFO	Listening on port 40681
+1615268464449	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1615270492152	geckodriver	INFO	Listening on 127.0.0.1:43927
+1615270492167	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileEyOi8p"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615270493932	Marionette	INFO	Listening on port 37857
+1615270493987	Marionette	WARN	TLS certificate errors will be ignored for this session
+1615270680476	Marionette	INFO	Stopped listening on port 40681
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1615270687885	Marionette	INFO	Stopped listening on port 37857
+1615271387155	geckodriver	INFO	Listening on 127.0.0.1:51775
+1615271387170	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7MrZcj"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615271388857	Marionette	INFO	Listening on port 34477
+1615271388890	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+1615271642218	Marionette	INFO	Stopped listening on port 34477
+1615271856943	geckodriver	INFO	Listening on 127.0.0.1:45595
+1615271856959	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZO8bi5"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615271858716	Marionette	INFO	Listening on port 46353
+1615271858802	Marionette	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PMessagePort::Msg_PostMessages Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+1615272023396	Marionette	INFO	Stopped listening on port 46353
+1615272030697	geckodriver	INFO	Listening on 127.0.0.1:42493
+1615272030712	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilerAdo03"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615272032556	Marionette	INFO	Listening on port 35583
+1615272032634	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 52: Error: Failed to load script: https://jssdkcdns.mparticle.com/js/v2/a8c837bced3bf546b6bfcad20f81ccb0/mparticle.js
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
+1615272745027	geckodriver	INFO	Listening on 127.0.0.1:40661
+1615272745042	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileWEWJ8U"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615272746858	Marionette	INFO	Listening on port 33215
+1615272746963	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1615272914041	Marionette	INFO	Stopped listening on port 33215
+1615272996303	geckodriver	INFO	Listening on 127.0.0.1:38203
+1615272996322	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilea8xxfb"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1615272998156	Marionette	INFO	Listening on port 45161
+1615272998243	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://static.okccdn.com/builds/desktop/js/router.79e3b68777dcbef72a2e.min.js, line 29: Invariant Violation: Invariant Violation: 28 (see https://github.com/apollographql/invariant-packages)
+1615273053103	Marionette	INFO	Stopped listening on port 35583
+1615273354271	Marionette	INFO	Stopped listening on port 45161
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+

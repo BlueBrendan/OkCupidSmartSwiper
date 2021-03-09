@@ -30,37 +30,40 @@ def createResultsDisplay(options):
         else:
             leftLabel = tk.Label(item, text="Left Swipes: 0", font=('Symphonie Grotesque', 13), fg="white", bg=bg)
             leftLabel.pack(side="left", padx=(0, 20))
-            rightLabel = tk.Label(item, text="Right Swipes: 0", font=('Symphonie Grotesque', 13), fg="white", bg=bg)
+            if options['Check Criteria'].get():
+               rightLabel = tk.Label(item, text="Right Swipes: 0", font=('Symphonie Grotesque', 13), fg="white", bg=bg)
+            else:
+                rightLabel = tk.Label(item, text="Potential Swipes: 0", font=('Symphonie Grotesque', 13), fg="white", bg=bg)
             rightLabel.pack(side="right", padx=(20, 0))
     return resultsDisplay, titleLabel, leftLabel, rightLabel
 
 def updateResultsDisplay(options, titleLabel, leftLabel, rightLabel, totalSwipeCount, leftSwipeCount, rightSwipeCount):
     titleLabel.configure(text=str(totalSwipeCount) + " out of " + str(options["Number of Swipes"].get()))
     leftLabel.configure(text="Left Swipes: " + str(leftSwipeCount))
-    rightLabel.configure(text="Right Swipes: " + str(rightSwipeCount))
+    if options['Check Criteria'].get():
+        rightLabel.configure(text="Right Swipes: " + str(rightSwipeCount))
+    else:
+        rightLabel.configure(text="Potential Swipes: " + str(rightSwipeCount))
 
 def openProfile(rightSwipeListbox, swipeList):
     webbrowser.open_new(swipeList[int(rightSwipeListbox.focus())][5])
 
-def closeWindow(root, window, resultsDisplay, buttons, driver):
+def closeWindow(root, window, buttons, driver):
     window.destroy()
-    resultsDisplay.destroy()
     for button in buttons:
         button.config(state=tk.NORMAL)
     driver.quit()
     root.attributes("-topmost", 1)
     root.attributes("-topmost", 0)
 
-def swipeAgain(root, window, resultsDisplay, titleLabel, leftLabel, rightLabel, options, buttons, driver):
+def swipeAgain(root, window, options, buttons, driver):
     window.destroy()
-    titleLabel.configure(text='0 out of ' + str(options["Number of Swipes"].get()))
-    leftLabel.configure(text='Left Swipes: 0')
-    rightLabel.configure(text='Right Swipes: 0')
-    resultsDisplay.update()
+    resultsDisplay, titleLabel, leftLabel, rightLabel = createResultsDisplay(options)
     from inspectProfile import inspectProfileFunction
     inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, 0, 0, 0, [], buttons)
 
-def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, titleLabel, leftLabel, rightLabel, empty, buttons, options, driver):
+def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, empty, buttons, options, driver):
+    resultsDisplay.destroy()
     finalDisplay = tk.Toplevel()
     finalDisplay.title("Final Results")
     finalDisplay.configure(bg=bg)
@@ -86,7 +89,10 @@ def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, s
     else:
             tk.Label(titleFrame, text=str(totalSwipeCount) + " Swipes Completed", font=('Symphonie Grotesque', 25), fg="white", bg=bg).pack(pady=(20, 0))
     tk.Label(resultsFrame, text="Left Swipes: " + str(leftSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="left", padx=(0, 25))
-    tk.Label(resultsFrame, text="Right Swipes: " + str(rightSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="right", padx=(25, 0))
+    if options['Check Criteria'].get():
+        tk.Label(resultsFrame, text="Right Swipes: " + str(rightSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="right", padx=(25, 0))
+    else:
+        tk.Label(resultsFrame, text="Potential Swipes: " + str(rightSwipeCount), font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(side="right", padx=(25, 0))
     if (empty):
         tk.Label(infoFrame, text="Program ended prematurely due to empty stack!\nChange your preferences to find more matches", font=('Symphonie Grotesque', 12), fg="white", bg=bg).pack(pady=(10, 0))
 
@@ -114,7 +120,7 @@ def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, s
     for i in range(len(swipeList)):
         rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(rightSwipeListbox, swipeList))
         rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3],swipeList[i][4]))
-    tk.Button(bottomFrame, text="OK", width=10, command=lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(root, finalDisplay, resultsDisplay, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
-    tk.Button(bottomFrame, text="SWIPE AGAIN", width=10, command=lambda finalDisplay=finalDisplay, buttons=buttons: swipeAgain(root, finalDisplay, resultsDisplay, titleLabel, leftLabel, rightLabel, options, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
-
+    tk.Button(bottomFrame, text="OK", width=10, command=lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(root, finalDisplay, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
+    tk.Button(bottomFrame, text="SWIPE AGAIN", width=10, command=lambda finalDisplay=finalDisplay, buttons=buttons: swipeAgain(root, finalDisplay, options, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
+    finalDisplay.protocol("WM_DELETE_WINDOW", lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(root, finalDisplay, buttons, driver))
     finalDisplay.update()

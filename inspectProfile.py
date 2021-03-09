@@ -29,9 +29,9 @@ def waitForProfile(driver):
 def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons):
     empty = waitForCardDeck(driver, False)
     if empty:
-        createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, titleLabel, leftLabel, rightLabel, empty, buttons, options, driver)
+        createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, empty, buttons, options, driver)
     elif totalSwipeCount >= options['Number of Swipes'].get():
-        createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, titleLabel, leftLabel, rightLabel, empty, buttons, options, driver)
+        createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, swipeList, resultsDisplay, empty, buttons, options, driver)
     else:
         # check compatibility percentage
         matchPercentage = driver.find_element_by_class_name('cardsummary-item.cardsummary-match').text
@@ -99,9 +99,19 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
         except:
             pass
 
+        name = driver.find_element_by_class_name("cardsummary-item.cardsummary-realname").text
+        profileLink = driver.find_element_by_class_name('cardsummary-item.cardsummary-profile-link')
+        link = str(profileLink.get_attribute('innerHTML'))
+        link = "https://www.okcupid.com" + link[link.index('href="') + 6:link.index('>', link.index('href="')) - 1]
         if options['Check Intro'].get() and intro:
-            cardDeckRightSwipe(driver)
+            swipeList.append([name, matchPercentage, imageCount, wordCount, 'NA', link])
+            # swipe right if criteria check is on, left if not
             rightSwipeCount += 1
+            if options['Check Criteria'].get():
+                cardDeckRightSwipe(driver)
+            else:
+                cardDeckLeftSwipe(driver)
+                leftSwipeCount += 1
         elif orientationPass or bodyTypePass or ethnicityPass or phrasePass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
@@ -115,15 +125,16 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
         else:
-            # swipe right if questions check is disabled
+            # make decision if questions check is disabled
             if not options['Check Questions'].get():
-                name = driver.find_element_by_class_name("cardsummary-item.cardsummary-realname").text
-                profileLink = driver.find_element_by_class_name('cardsummary-item.cardsummary-profile-link')
-                link = str(profileLink.get_attribute('innerHTML'))
-                link = "https://www.okcupid.com" + link[link.index('href="') + 6:link.index('>', link.index('href="')) - 1]
                 swipeList.append([name, matchPercentage, imageCount, wordCount, 'NA', link])
-                cardDeckRightSwipe(driver)
+                # swipe right if criteria check is on, left if not
                 rightSwipeCount += 1
+                if options['Check Criteria'].get():
+                    cardDeckRightSwipe(driver)
+                else:
+                    cardDeckLeftSwipe(driver)
+                    leftSwipeCount += 1
             else:
                 # view profile to access questions
                 profileLink = driver.find_element_by_class_name('cardsummary-item.cardsummary-profile-link')
@@ -138,12 +149,15 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
                 for i in range(len(questions)):
                     if questions[i].text != ' ':
                         questionCount += int(questions[i].text.replace(',', ''))
-
                 if questionCount >= options['Minimum Questions Answered'].get():
                     name = driver.find_element_by_class_name("profile-basics-username").text
                     swipeList.append([name, matchPercentage, imageCount, wordCount, questionCount, link])
-                    profileRightSwipe(driver)
-                    rightSwipeCount+=1
+                    rightSwipeCount += 1
+                    if options['Check Criteria'].get():
+                        profileRightSwipe(driver)
+                    else:
+                        profileLeftSwipe(driver)
+                        leftSwipeCount += 1
                 else:
                     profileLeftSwipe(driver)
                     leftSwipeCount+=1

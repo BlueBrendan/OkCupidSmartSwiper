@@ -144,17 +144,14 @@ ethnicityButton.pack(pady=(0, 15))
 phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phraseEdit(options, phrasesButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 phrasesButton.pack()
 
-
-
-
 bottomContainer = tk.Frame(mainContainer, bg=bg)
 bottomContainer.pack(fill='x', pady=(25, 0))
 
 swipeContainer = tk.Frame(bottomContainer, bg=bg)
 swipeContainer.pack(side="left")
-swipeCheck = tk.Checkbutton(swipeContainer, variable=options['Check Intro'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(False, "Check Intro"))
+swipeCheck = tk.Checkbutton(swipeContainer, variable=options['Check Criteria'], bg=bg, highlightbackground=bg, activebackground=bg, command=lambda: checkbuttonClick(False, "Check Criteria"))
 swipeCheck.pack(side="left")
-swipeLabel =tk.Label(swipeContainer, text="Swipe Right Upon Meeting All Criteria", wraplength=150, font=('Symphonie Grotesque', 12), fg='white', bg=bg)
+swipeLabel =tk.Label(swipeContainer, text="Swipe Right Upon Meeting Criteria", wraplength=150, font=('Symphonie Grotesque', 12), fg='white', bg=bg)
 swipeLabel.pack(side="right")
 
 introContainer = tk.Frame(bottomContainer, bg=bg)
