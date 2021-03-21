@@ -43,7 +43,7 @@ y = (hs/2) - (430/2)
 root.geometry('%dx%d+%d+%d' % (1400, 430, x, y))
 root.configure(bg=bg)
 if platform == 'win32':
-    root.Ficonbitmap(resourcePath('favicon.ico'))
+    root.iconbitmap(resourcePath('favicon.ico'))
 
 # retrieve user settings
 if not os.path.exists(resourcePath('Settings.txt')):
@@ -135,13 +135,13 @@ questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 # number of questions threshold selection
 buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
 buttonsContainer.pack(padx=(50, 0))
-orientationButton = tk.Button(buttonsContainer, text="ORIENTATION", command=lambda: orientationEdit(options, orientationButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+orientationButton = tk.Button(buttonsContainer, text="ORIENTATION", command=lambda: orientationEdit(options, orientationButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 orientationButton.pack(pady=(0, 15))
-bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bodyTypeButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bodyTypeButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 bodyTypeButton.pack(pady=(0, 15))
-ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, ethnicityButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+ethnicityButton = tk.Button(buttonsContainer, text="ETHNICITY", command=lambda: ethnicityEdit(options, ethnicityButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 ethnicityButton.pack(pady=(0, 15))
-phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phraseEdit(options, phrasesButton, bg, secondary_bg, tertiary_bg), width=11, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phraseEdit(options, phrasesButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 phrasesButton.pack()
 
 bottomContainer = tk.Frame(mainContainer, bg=bg)

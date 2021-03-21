@@ -35,11 +35,13 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
     else:
         # check compatibility percentage
         matchPercentage = driver.find_element_by_class_name('cardsummary-item.cardsummary-match').text
+        while matchPercentage == '':
+            time.sleep(0.20)
+            matchPercentage = driver.find_element_by_class_name('cardsummary-item.cardsummary-match').text
         if matchPercentage[2] == '%':
             matchPercentage = int(matchPercentage[0:2])
         else:
             matchPercentage = 100
-
         # check number of photos
         imageElements = driver.find_elements_by_class_name('fadein-image.image_wrapper.loaded')
         imageCount = len(imageElements)

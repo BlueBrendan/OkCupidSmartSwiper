@@ -21,9 +21,30 @@ def profileRightSwipe(driver):
 def cardDeckLeftSwipe(driver):
     time.sleep(0.25)
     passButton = driver.find_element_by_class_name("pill-button.pass-pill-button.doubletake-pass-button")
-    passButton.click()
+    try:
+        passButton.click()
+    except:
+        buttonWait(driver, 'card pass')
 
 def cardDeckRightSwipe(driver):
     time.sleep(0.25)
     likeButton = driver.find_element_by_class_name("pill-button.likes-pill-button.doubletake-like-button")
-    likeButton.click()
+    try:
+        likeButton.click()
+    except:
+        buttonWait(driver, 'card like')
+
+def buttonWait(driver, type):
+    time.sleep(0.25)
+    if type == 'card pass':
+        button = driver.find_element_by_class_name("pill-button.pass-pill-button.doubletake-pass-button")
+        try:
+            button.click()
+        except:
+            buttonWait(driver, 'card pass')
+    elif type == 'card like':
+        button = driver.find_element_by_class_name("pill-button.likes-pill-button.doubletake-like-button")
+        try:
+            button.click()
+        except:
+            buttonWait(driver, 'card like')

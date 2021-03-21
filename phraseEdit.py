@@ -111,8 +111,8 @@ def phraseEdit(options, button, bg, secondary_bg, tertiary_bg):
 
     buttonContainer = tk.Frame(phraseWindow, bg=bg)
     buttonContainer.pack(pady=(20, 0))
-    tk.Button(buttonContainer, text="ADD", command=lambda: phraseAddPrompt(phraseListbox, options, bg, secondary_bg), width=5, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(side="left", padx=(0, 15))
-    removeButton = tk.Button(buttonContainer, text="REMOVE", command=lambda: phraseRemove(phraseListbox, removeButton, options), width=5, state=tk.DISABLED, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
+    tk.Button(buttonContainer, text="ADD", command=lambda: phraseAddPrompt(phraseListbox, options, bg, secondary_bg), width=7, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(side="left", padx=(0, 15))
+    removeButton = tk.Button(buttonContainer, text="REMOVE", command=lambda: phraseRemove(phraseListbox, removeButton, options), width=8, state=tk.DISABLED, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
     removeButton.pack(side="right", padx=(15, 0))
 
     description = tk.Frame(phraseWindow, bg=bg)
