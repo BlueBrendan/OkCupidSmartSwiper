@@ -98,11 +98,11 @@ def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, s
 
     # treeview to display all profiles we swiped right on
     style = ttk.Style()
-    style.configure("mystyle.Treeview", highlightthickness=0, bd=0, font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
-    style.configure("mystyle.Treeview.Heading", font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground="white")
-    style.layout("mystyle.Treeview", [('mystyle.Treeview.treearea', {'sticky': 'nswe'})])
+    style.theme_use("clam")
+    style.configure("Treeview", bd=0, font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground='white',fieldbackground=bg)
+    style.configure("Treeview.Heading", font=('Symphonie Grotesque', 15), background=tertiary_bg, foreground='white', fieldbackground=bg)
 
-    rightSwipeListbox = ttk.Treeview(tableFrame, columns=("#", "Name", "Match Percentage", "Image Count", "Word Count", "Question Count"), style='mystyle.Treeview')
+    rightSwipeListbox = ttk.Treeview(tableFrame, columns=("#", "Name", "Match Percentage", "Image Count", "Word Count", "Question Count"), style='Treeview')
     rightSwipeListbox.pack(pady=(20, 0))
     rightSwipeListbox.column('#0', width=0, stretch=tk.NO)
     rightSwipeListbox.column('#1', anchor=tk.CENTER, width=60)
@@ -120,7 +120,8 @@ def createFinalDisplay(root, totalSwipeCount, leftSwipeCount, rightSwipeCount, s
     for i in range(len(swipeList)):
         rightSwipeListbox.bind("<Double-1>", lambda e, rightSwipeListbox=rightSwipeListbox, swipeList=swipeList: openProfile(rightSwipeListbox, swipeList))
         rightSwipeListbox.insert('', 'end', i, values=(i+1, swipeList[i][0], str(swipeList[i][1]) + '%', swipeList[i][2], swipeList[i][3],swipeList[i][4]))
-    tk.Button(bottomFrame, text="OK", width=12, command=lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(root, finalDisplay, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
+
+    tk.Button(bottomFrame, text="OK", width=12, command=lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(root, finalDisplay, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(10, 0))
     tk.Button(bottomFrame, text="SWIPE AGAIN", width=12, command=lambda finalDisplay=finalDisplay, buttons=buttons: swipeAgain(root, finalDisplay, options, buttons, driver), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(20, 0))
     finalDisplay.protocol("WM_DELETE_WINDOW", lambda finalDisplay=finalDisplay, buttons=buttons: closeWindow(root, finalDisplay, buttons, driver))
     finalDisplay.update()
