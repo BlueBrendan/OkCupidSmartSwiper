@@ -1,6 +1,6 @@
 # OkCupid Smart Swiper
 
-Thanks for trying out the OkCupid Smart Swiper! Check out our promotional video here if you haven't already: *YouTube link*
+Thanks for trying out the OkCupid Smart Swiper! Check out our promotional video here if you haven't already: https://www.youtube.com/watch?v=XikKeaa8a5o
 
 ## Preface
 The OkCupid Smart Swiper is a sophisticated automation tool designed to automate profile swiping on OkCupid, the online dating platform. Rather than swiping right on all profiles like most bots, the OkCupid Smart Swiper uses various details on a profile like the match percentage, image count, bio word count, and question count to make a swiping decision 
