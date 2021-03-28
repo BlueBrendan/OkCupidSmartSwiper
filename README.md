@@ -12,7 +12,7 @@ To use the OkCupid Smart Swiper, you must have
 3. An OkCupid account and its login credentials
 
 ## Setup
-1. Download the OkCupid Smart Swiper from *google drive link*
+1. Download the OkCupid Smart Swiper from https://drive.google.com/drive/folders/1GZ0IP0k_JwWIakCRfUizHDSRfVoR8DiN?usp=sharing
 2. Start the application by double clicking OkCupid Smart Swiper.exe
 3. Set the parameters to taste (the defaults are 95% match percentage, 3 images, 100 words, and 100 questions)
 4. Click the "Start Swiping" button
