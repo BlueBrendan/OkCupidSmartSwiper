@@ -1,6 +1,6 @@
 # OkCupid Smart Swiper
 
-Thanks for trying out the OkCupid Smart Swiper! Check out our promotional video here if you havent' already: *YouTube link*
+Thanks for trying out the OkCupid Smart Swiper! Check out our promotional video here if you haven't already: *YouTube link*
 
 ## Preface
 The OkCupid Smart Swiper is a sophisticated automation tool designed to automate profile swiping on OkCupid, the online dating platform. Rather than swiping right on all profiles like most bots, the OkCupid Smart Swiper uses various details on a profile like the match percentage, image count, bio word count, and question count to make a swiping decision 
@@ -25,4 +25,4 @@ To use the OkCupid Smart Swiper, you must have
 The OkCupid Smart Swiper is written in Python and uses Tkinter, Python's standard out-of-the-box graphical interface. Selenium is used for web browser interaction
 
 ## Contact
-If you'd like to send a private message or want to contribute to the development of the project, you can access the GitHub for this project at https://github.com/BlueBrendan/OkCupid-Smart-Swiper
+If you'd like to send a private message or want to contribute to the development of the project, you can contact Brendan at brendanchoudfo@gmail.com
