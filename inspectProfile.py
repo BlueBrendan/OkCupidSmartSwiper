@@ -63,7 +63,7 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
         orientationPass = False
         try:
             orientationDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--basics').text)
-            for orientation in options['Orientations']:
+            for orientation in options['Orientation']:
                 if orientation.lower() in orientationDescription.lower():
                     orientationPass = True
                     break
@@ -74,20 +74,30 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
         bodyTypePass = False
         try:
             bodyTypeDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks').text)
-            for bodyType in options['Body Types']:
+            for bodyType in options['Body Type']:
                 if bodyType.lower() in bodyTypeDescription.lower():
                     bodyTypePass = True
                     break
         except:
             pass
 
-        # check ethnicity (if applicable)
+        # check ethnicity/religion/education (if applicable)
         ethnicityPass = False
+        religionPass = False
+        educationPass = False
         try:
-            ethnicityDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background').text)
-            for ethnicity in options['Ethnicities']:
-                if ethnicity.lower() in ethnicityDescription.lower():
+            backgroundDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background').text).lower()
+            for ethnicity in options['Ethnicity']:
+                if ethnicity.lower() in backgroundDescription:
                     ethnicityPass = True
+                    break
+            for religion in options['Religion']:
+                if religion.lower() in backgroundDescription:
+                    religionPass = True
+                    break
+            for education in options['Education']:
+                if education.lower() in backgroundDescription:
+                    educationPass = True
                     break
         except:
             pass
@@ -113,7 +123,7 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
             else:
                 cardDeckLeftSwipe(driver)
                 leftSwipeCount += 1
-        elif orientationPass or bodyTypePass or ethnicityPass or phrasePass:
+        elif orientationPass or bodyTypePass or ethnicityPass or phrasePass or religionPass or educationPass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
         elif options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():

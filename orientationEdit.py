@@ -8,7 +8,7 @@ invalid_selection = '#9c1616'
 def selectOrientation(listbox, options, toggleCheckbutton):
     index = int(listbox.curselection()[0])
     toggleCheckbutton.config(state=tk.NORMAL)
-    if listbox.get(index) in options['Orientations']:
+    if listbox.get(index) in options['Orientation']:
         listbox.itemconfig(index, bg=invalid_color, selectbackground=invalid_selection)
         toggleCheckbutton.deselect()
     else:
@@ -16,20 +16,20 @@ def selectOrientation(listbox, options, toggleCheckbutton):
 
 def toggleOrientation(listbox, options, tertiary_bg, quaternary_bg):
     index = int(listbox.curselection()[0])
-    originalOrientation = 'Orientations:'
-    for orientation in options['Orientations']:
+    originalOrientation = 'Orientation:'
+    for orientation in options['Orientation']:
         originalOrientation += orientation + ','
     if originalOrientation[-1] == ',': originalOrientation = originalOrientation[:-1]
-    if listbox.get(index) not in options['Orientations']:
-        options['Orientations'].append(listbox.get(index))
+    if listbox.get(index) not in options['Orientation']:
+        options['Orientation'].append(listbox.get(index))
         listbox.itemconfig(index, bg=invalid_color, selectbackground=invalid_selection)
     else:
-        options['Orientations'].remove(listbox.get(index))
+        options['Orientation'].remove(listbox.get(index))
         listbox.itemconfig(index, bg=quaternary_bg, selectbackground=tertiary_bg)
     # write to settings file
     CONFIG_FILE = open(resourcePath('Settings.txt'), 'r').read()
-    newOrientation = 'Orientations:'
-    for orientation in options['Orientations']:
+    newOrientation = 'Orientation:'
+    for orientation in options['Orientation']:
         newOrientation += orientation + ','
     if newOrientation[-1] == ',': newOrientation = newOrientation[:-1]
     with open(resourcePath('Settings.txt'), 'wt') as file:
@@ -59,7 +59,7 @@ def orientationEdit(options, button, bg, secondary_bg, tertiary_bg):
     orientations = ['Straight', 'Gay', 'Bisexual', 'Asexual', 'Demisexual', 'Homoflexible', 'Heteroflexible', 'Lesbian', 'Pansexual', 'Queer', 'Questioning', 'Gray-asexual', 'Reciprosexual', 'Akiosexual', 'Aceflux', 'Grayromantic', 'Demiromantic', 'Recipromantic', 'Akioromantic', 'Aroflux']
     for index, orientation in enumerate(orientations):
         orientationListbox.insert(tk.END, orientation)
-        if orientation in options['Orientations']:
+        if orientation in options['Orientation']:
             orientationListbox.itemconfig(index, bg=invalid_color)
     orientationListbox.pack(pady=(30, 0))
     toggleCheckbutton = tk.Checkbutton(listboxContainer, command=lambda listbox=orientationListbox,options=options: toggleOrientation(orientationListbox, options, tertiary_bg, quaternary_bg), bg=bg, highlightbackground=bg, activebackground=bg, state=tk.DISABLED)

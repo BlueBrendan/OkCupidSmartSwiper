@@ -8,7 +8,7 @@ invalid_selection = '#9c1616'
 def selectBodyType(listbox, options, toggleCheckbutton):
     index = int(listbox.curselection()[0])
     toggleCheckbutton.config(state=tk.NORMAL)
-    if listbox.get(index) in options['Body Types']:
+    if listbox.get(index) in options['Body Type']:
         listbox.itemconfig(index, bg=invalid_color, selectbackground=invalid_selection)
         toggleCheckbutton.deselect()
     else:
@@ -16,20 +16,20 @@ def selectBodyType(listbox, options, toggleCheckbutton):
 
 def toggleBodyType(listbox, options, tertiary_bg, quaternary_bg):
     index = int(listbox.curselection()[0])
-    originalBodyTypes = 'Body Types:'
-    for type in options['Body Types']:
+    originalBodyTypes = 'Body Type:'
+    for type in options['Body Type']:
         originalBodyTypes += type + ','
     if originalBodyTypes[-1] == ',': originalBodyTypes = originalBodyTypes[:-1]
-    if listbox.get(index) not in options['Body Types']:
-        options['Body Types'].append(listbox.get(index))
+    if listbox.get(index) not in options['Body Type']:
+        options['Body Type'].append(listbox.get(index))
         listbox.itemconfig(index, bg=invalid_color, selectbackground=invalid_selection)
     else:
-        options['Body Types'].remove(listbox.get(index))
+        options['Body Type'].remove(listbox.get(index))
         listbox.itemconfig(index, bg=quaternary_bg, selectbackground=tertiary_bg)
     # write to settings file
     CONFIG_FILE = open(resourcePath('Settings.txt'), 'r').read()
-    newBodyTypes = 'Body Types:'
-    for type in options['Body Types']:
+    newBodyTypes = 'Body Type:'
+    for type in options['Body Type']:
         newBodyTypes += type + ','
     if newBodyTypes[-1] == ',': newBodyTypes = newBodyTypes[:-1]
     with open(resourcePath('Settings.txt'), 'wt') as file:
@@ -59,7 +59,7 @@ def bodyTypeEdit(options, button, bg, secondary_bg, tertiary_bg):
     bodyTypes = ['Thin', 'Average', 'Fit', 'Jacked', 'A little extra', 'Overweight', 'Curvy', 'Full Figured']
     for index, bodyType in enumerate(bodyTypes):
         bodyTypeListbox.insert(tk.END, bodyType)
-        if bodyType in options['Body Types']:
+        if bodyType in options['Body Type']:
             bodyTypeListbox.itemconfig(index, bg=invalid_color)
     bodyTypeListbox.pack(pady=(30, 0))
     toggleCheckbutton = tk.Checkbutton(listboxContainer, command=lambda listbox=bodyTypeListbox,options=options: toggleBodyType(bodyTypeListbox, options, tertiary_bg, quaternary_bg), bg=bg, highlightbackground=bg, activebackground=bg, state=tk.DISABLED)
