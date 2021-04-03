@@ -9,7 +9,7 @@ def resourcePath(relative_path):
 def readConfigFile(bg, secondary_bg):
     CONFIG_FILE = open(resourcePath("Settings.txt"), 'r').read()
     options = {}
-    terms = ['Number of Swipes', 'Check Percentage', 'Minimum Percentage', 'Check Images',  'Minimum Number of Images', 'Check Words',  'Minimum Word Count', 'Check Questions',  'Minimum Questions Answered', 'Orientation', 'Body Type', 'Ethnicity', 'Education', 'Religion', 'Phrases', 'Check Criteria', 'Check Intro']
+    terms = ['Number of Swipes', 'Check Percentage', 'Minimum Percentage', 'Check Images',  'Minimum Number of Images', 'Check Words',  'Minimum Word Count', 'Check Questions',  'Minimum Questions Answered', 'Orientation', 'Relationship', 'Body Type', 'Ethnicity', 'Education', 'Religion', 'Phrases', 'Check Criteria', 'Check Intro']
     for term in terms:
         if term[0:5] == 'Check':
             try:
@@ -19,7 +19,7 @@ def readConfigFile(bg, secondary_bg):
                 os.remove(resourcePath('Settings.txt'))
                 createConfigFile(bg, secondary_bg)
                 readConfigFile(bg, secondary_bg)
-        elif term[0:12] == 'Orientation' or term[0:4] == 'Body' or term[0:11] == 'Ethnicity' or term[0:7] == 'Phrases' or term[0:8] == 'Religion' or term[0:9] == 'Education':
+        elif term[0:12] == 'Orientation' or term[0:4] == 'Body' or term[0:11] == 'Ethnicity' or term[0:7] == 'Phrases' or term[0:8] == 'Religion' or term[0:9] == 'Education' or term[0:12] == 'Relationship':
             try:
                 values = CONFIG_FILE[CONFIG_FILE.index(term) + len(term) + 1: CONFIG_FILE.index('\n', CONFIG_FILE.index(term) + len(term))]
                 if values == '':
@@ -44,7 +44,7 @@ def readConfigFile(bg, secondary_bg):
 def createConfigFile(bg, secondary_bg):
     # create settings file
     file = open("Settings.txt", 'w')
-    file.write("Number of Swipes:100\nCheck Percentage:True\nMinimum Percentage:95\nCheck Images:True\nMinimum Number of Images:3\nCheck Words:True\nMinimum Word Count:100\nCheck Questions:True\nMinimum Questions Answered:100\nOrientation:\nBody Type:\nEthnicity:\nEducation:\nReligion:\nPhrases:fluent in sarcasm,can't see likes,cant see likes,handle me at my worst,i'm a nice guy,im a nice guy\nCheck Criteria:True\nCheck Intro:True\n")
+    file.write("Number of Swipes:100\nCheck Percentage:True\nMinimum Percentage:95\nCheck Images:True\nMinimum Number of Images:3\nCheck Words:True\nMinimum Word Count:100\nCheck Questions:True\nMinimum Questions Answered:100\nOrientation:\nRelationship:\nBody Type:\nEthnicity:\nEducation:\nReligion:\nPhrases:fluent in sarcasm,can't see likes,cant see likes,handle me at my worst,i'm a nice guy,im a nice guy\nCheck Criteria:True\nCheck Intro:True\n")
     file.close()
 
 def zeroEntrybox(item, term):

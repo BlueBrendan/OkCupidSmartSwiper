@@ -1,12 +1,11 @@
 from handleStartup import login
 from settings import readConfigFile, createConfigFile, zeroEntrybox, nonZeroEntrybox, checkbuttonClick, checkInt, resourcePath
-from orientationEdit import orientationEdit
-from bodyTypeEdit import bodyTypeEdit
+from basicsEdit import basicsEdit
+from looksEdit import looksEdit
 from backgroundEdit import backgroundEdit
 from phraseEdit import phraseEdit
 from sys import platform
 import tkinter as tk
-from tkinter import *
 import os
 
 if platform == 'win32':
@@ -135,11 +134,11 @@ questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 # number of questions threshold selection
 buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
 buttonsContainer.pack(padx=(50, 0))
-orientationButton = tk.Button(buttonsContainer, text="ORIENTATION", command=lambda: orientationEdit(options, orientationButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
-orientationButton.pack(pady=(0, 15))
-bodyTypeButton = tk.Button(buttonsContainer, text="BODY TYPE", command=lambda: bodyTypeEdit(options, bodyTypeButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
-bodyTypeButton.pack(pady=(0, 15))
-backgroundButton = tk.Button(buttonsContainer, text="BACKGROUND", command=lambda: backgroundEdit(options, backgroundButton, bg, secondary_bg, tertiary_bg, root), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+basicsButton = tk.Button(buttonsContainer, text="BASICS", command=lambda: basicsEdit(options, basicsButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+basicsButton.pack(pady=(0, 15))
+looksButton = tk.Button(buttonsContainer, text="LOOKS", command=lambda: looksEdit(options, looksButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+looksButton.pack(pady=(0, 15))
+backgroundButton = tk.Button(buttonsContainer, text="BACKGROUND", command=lambda: backgroundEdit(options, backgroundButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 backgroundButton.pack(pady=(0, 15))
 phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phraseEdit(options, phrasesButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 phrasesButton.pack()
@@ -161,7 +160,7 @@ introCheck.pack(side="left")
 introLabel =tk.Label(introContainer, text="Swipe Right on Detecting Intro", wraplength=120, font=('Symphonie Grotesque', 12), fg='white', bg=bg)
 introLabel.pack(side="left")
 
-startButton = tk.Button(bottomContainer, text="BEGIN SWIPING", command=lambda: login(root, [startButton, orientationButton, bodyTypeButton, backgroundButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
+startButton = tk.Button(bottomContainer, text="BEGIN SWIPING", command=lambda: login(root, [startButton, basicsButton, looksButton, backgroundButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
 startButton.pack(side="left", padx=(230, 0))
 
 root.mainloop()

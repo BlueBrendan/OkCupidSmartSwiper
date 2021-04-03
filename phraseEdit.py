@@ -95,9 +95,9 @@ def phraseEdit(options, button, bg, secondary_bg, tertiary_bg):
     phraseWindow.title("Phrase Preferences")
     ws = phraseWindow.winfo_screenwidth()  # width of the screen
     hs = phraseWindow.winfo_screenheight()  # height of the screen
-    x = (ws / 2) - (550 / 2)
-    y = (hs / 2) - (430 / 2)
-    phraseWindow.geometry('%dx%d+%d+%d' % (550, 430, x, y))
+    x = (ws / 2) - (500 / 2)
+    y = (hs / 2) - (400 / 2)
+    phraseWindow.geometry('%dx%d+%d+%d' % (500, 400, x, y))
     phraseWindow.configure(bg=bg)
 
     listboxContainer = tk.Frame(phraseWindow, bg=bg)
@@ -117,6 +117,6 @@ def phraseEdit(options, button, bg, secondary_bg, tertiary_bg):
 
     description = tk.Frame(phraseWindow, bg=bg)
     description.pack()
-    tk.Label(description, text="The program will swipe left on all profiles that use any of the phrases above in their bio. Phrases are NOT case sensitive", wraplength=450, font=('Symphonie Grotesque', 14), fg="white", bg=bg, justify='left').pack(pady=(30, 0))
+    tk.Label(description, text="The program will swipe left on all profiles that use any of the phrases above in their bio. Phrases are NOT case sensitive", wraplength=450, font=('Symphonie Grotesque', 13), fg="white", bg=bg, justify='left').pack(pady=(20, 0))
 
     phraseWindow.protocol("WM_DELETE_WINDOW", lambda button=button, window=phraseWindow: onClose(button, window))

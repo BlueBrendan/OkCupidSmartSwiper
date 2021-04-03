@@ -43,10 +43,10 @@ def toggleEducation(listbox, options, tertiary_bg, quaternary_bg):
 
 def educationEdit(tab_parent, options):
     # Education Tab
-    tab1 = tk.Frame(tab_parent, bg=bg)
-    tab_parent.add(tab1, text="Education")
+    tab3 = tk.Frame(tab_parent, bg=bg)
+    tab_parent.add(tab3, text="Education")
 
-    listboxContainer = tk.Frame(tab1, bg=bg)
+    listboxContainer = tk.Frame(tab3, bg=bg)
     listboxContainer.pack()
     educationListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
     educations = ['High school', 'Trade/tech school', 'In college', 'Undergraduate degree']
@@ -60,6 +60,6 @@ def educationEdit(tab_parent, options):
     toggleCheckbutton.pack(pady=(5, 0))
     educationListbox.bind('<<ListboxSelect>>', lambda event, listbox=educationListbox: selectEducation(listbox, options, toggleCheckbutton))
 
-    description = tk.Frame(tab1, bg=bg)
+    description = tk.Frame(tab3, bg=bg)
     description.pack()
     tk.Label(description, text="Disabling an education will swipe left\non all profiles identifying as having that education", font=('Symphonie Grotesque', 13), fg="white", bg=bg, justify='left').pack(pady=(15, 0))

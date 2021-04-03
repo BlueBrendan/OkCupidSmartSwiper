@@ -1,9 +1,8 @@
 from settings import resourcePath
 import tkinter as tk
 from tkinter import ttk
-from backgroundTabs.ethnicityTab import ethnicityEdit
-from backgroundTabs.religionTab import religionEdit
-from backgroundTabs.educationTab import educationEdit
+from basicsTabs.orientationTab import orientationEdit
+from basicsTabs.relationshipTab import relationshipEdit
 from sys import platform
 
 invalid_color = '#801212'
@@ -13,20 +12,20 @@ def onClose(button, window):
     button.config(state=tk.NORMAL)
     window.destroy()
 
-def backgroundEdit(options, button, bg, secondary_bg, tertiary_bg):
+def basicsEdit(options, button, bg, secondary_bg, tertiary_bg):
     # disable body type button until window is closed
     button.config(state=tk.DISABLED)
 
-    backgroundWindow = tk.Toplevel()
-    backgroundWindow.title("Background Preferences")
-    ws = backgroundWindow.winfo_screenwidth()  # width of the screen
-    hs = backgroundWindow.winfo_screenheight()  # height of the screen
+    basicsWindow = tk.Toplevel()
+    basicsWindow.title("Basics Preferences")
+    ws = basicsWindow.winfo_screenwidth()  # width of the screen
+    hs = basicsWindow.winfo_screenheight()  # height of the screen
     x = (ws / 2) - (500 / 2)
     y = (hs / 2) - (400 / 2)
-    backgroundWindow.geometry('%dx%d+%d+%d' % (500, 400, x, y))
-    backgroundWindow.configure(bg=bg)
+    basicsWindow.geometry('%dx%d+%d+%d' % (500, 400, x, y))
+    basicsWindow.configure(bg=bg)
     if platform == 'win32':
-        backgroundWindow.iconbitmap(resourcePath('favicon.ico'))
+        basicsWindow.iconbitmap(resourcePath('favicon.ico'))
 
     s = ttk.Style()
     try:
@@ -39,11 +38,10 @@ def backgroundEdit(options, button, bg, secondary_bg, tertiary_bg):
         pass
     s.theme_use("Smart Swiper")
 
-    tab_parent = ttk.Notebook(backgroundWindow)
+    tab_parent = ttk.Notebook(basicsWindow)
     tab_parent.pack(expand=1, fill='both')
 
-    ethnicityEdit(tab_parent, options)
-    religionEdit(tab_parent, options)
-    educationEdit(tab_parent, options)
+    orientationEdit(tab_parent, options)
+    relationshipEdit(tab_parent, options)
 
-    backgroundWindow.protocol("WM_DELETE_WINDOW", lambda button=button, window=backgroundWindow: onClose(button, window))
+    basicsWindow.protocol("WM_DELETE_WINDOW", lambda button=button, window=basicsWindow: onClose(button, window))
