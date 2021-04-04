@@ -48,7 +48,7 @@ def ethnicityEdit(tab_parent, options):
 
     listboxContainer = tk.Frame(tab2, bg=bg)
     listboxContainer.pack()
-    ethnicityListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
+    ethnicityListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 14), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
     ethnicities = ['Asian', 'Black', 'Hispanic/Latin', 'Indian', 'Middle Eastern', 'Native American', 'Pacific Islander', 'White', 'Other']
     for index, ethnicity in enumerate(ethnicities):
         ethnicityListbox.insert(tk.END, ethnicity)

@@ -32,7 +32,7 @@ def basicsEdit(options, button, bg, secondary_bg, tertiary_bg):
         s.theme_create("Smart Swiper", parent="alt", settings={
             "TNotebook": {"configure": {"tabmargins": [2, 5, 2, 0], "background": bg, 'borderwidth': 0}},
             "TNotebook.Tab": {
-                "configure": {"padding": [13, 5], "font": ('Symphonie Grotesque', '13'), "background": tertiary_bg, 'foreground': 'white', 'borderwidth': 1},
+                "configure": {"padding": [13, 5], "font": ('Symphonie Grotesque', '14'), "background": tertiary_bg, 'foreground': 'white', 'borderwidth': 1},
                 "map": {"background": [("selected", bg)], "expand": [("selected", [1, 1, 1, 0])]}}})
     except:
         pass

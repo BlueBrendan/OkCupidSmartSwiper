@@ -44,7 +44,7 @@ def phraseAddPrompt(phraseListbox, options, bg, secondary_bg):
     mainContainer = tk.Frame(addPhraseWindow, bg=bg)
     mainContainer.pack()
     newPhrase = tk.StringVar()
-    tk.Label(mainContainer, text="Enter a new phrase", font=('Symphonie Grotesque', 15), fg="white", bg=bg).pack(pady=(20, 0))
+    tk.Label(mainContainer, text="Enter a new phrase", font=('Symphonie Grotesque', 14), fg="white", bg=bg).pack(pady=(20, 0))
     tk.Entry(mainContainer, textvariable=newPhrase, width=40, font=("Symphonie Grotesque", 14), highlightbackground="black").pack(pady=(15, 0))
     tk.Button(mainContainer, text="ADD", command=lambda: phraseAdd(phraseListbox, options, newPhrase, addPhraseWindow, bg, secondary_bg), width=5, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(25,0))
 
@@ -102,7 +102,7 @@ def phraseEdit(options, button, bg, secondary_bg, tertiary_bg):
 
     listboxContainer = tk.Frame(phraseWindow, bg=bg)
     listboxContainer.pack()
-    phraseListbox = tk.Listbox(listboxContainer,  font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg,  highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
+    phraseListbox = tk.Listbox(listboxContainer,  font=('Symphonie Grotesque', 14), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg,  highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
 
     for index, phrase in enumerate(options['Phrases']):
         phraseListbox.insert(tk.END, phrase)
@@ -111,7 +111,7 @@ def phraseEdit(options, button, bg, secondary_bg, tertiary_bg):
 
     buttonContainer = tk.Frame(phraseWindow, bg=bg)
     buttonContainer.pack(pady=(20, 0))
-    tk.Button(buttonContainer, text="ADD", command=lambda: phraseAddPrompt(phraseListbox, options, bg, secondary_bg), width=7, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(side="left", padx=(0, 15))
+    tk.Button(buttonContainer, text="ADD", command=lambda: phraseAddPrompt(phraseListbox, options, bg, secondary_bg), width=7, font=('Symphonie Grotesque', 14), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(side="left", padx=(0, 15))
     removeButton = tk.Button(buttonContainer, text="REMOVE", command=lambda: phraseRemove(phraseListbox, removeButton, options), width=8, state=tk.DISABLED, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
     removeButton.pack(side="right", padx=(15, 0))
 

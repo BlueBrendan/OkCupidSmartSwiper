@@ -48,7 +48,7 @@ def religionEdit(tab_parent, options):
 
     listboxContainer = tk.Frame(tab1, bg=bg)
     listboxContainer.pack()
-    religionListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
+    religionListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 14), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
     religions = ['Agnosticism', 'Atheism', 'Christianity', 'Judaism', 'Catholicism', 'Islam', 'Hinduism', 'Buddhism', 'Sikh', 'Other religion']
     for index, religion in enumerate(religions):
         religionListbox.insert(tk.END, religion)

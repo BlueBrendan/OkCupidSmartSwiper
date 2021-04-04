@@ -48,7 +48,7 @@ def relationshipEdit(tab_parent, options):
 
     listboxContainer = tk.Frame(tab1, bg=bg)
     listboxContainer.pack()
-    relationshipListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
+    relationshipListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 14), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
     relationships = ['Monogamous', 'Non-monogamous', 'Open to either']
     for index, relationship in enumerate(relationships):
         relationshipListbox.insert(tk.END, relationship)

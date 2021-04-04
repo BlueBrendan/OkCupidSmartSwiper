@@ -48,7 +48,7 @@ def orientationEdit(tab_parent, options):
 
     listboxContainer = tk.Frame(tab1, bg=bg)
     listboxContainer.pack()
-    orientationListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
+    orientationListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 14), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
     orientations = ['Straight', 'Gay', 'Bisexual', 'Asexual', 'Demisexual', 'Homoflexible', 'Heteroflexible', 'Lesbian', 'Pansexual', 'Queer', 'Questioning', 'Gray-asexual', 'Reciprosexual', 'Akiosexual', 'Aceflux', 'Grayromantic', 'Demiromantic', 'Recipromantic', 'Akioromantic', 'Aroflux']
     for index, orientation in enumerate(orientations):
         orientationListbox.insert(tk.END, orientation)

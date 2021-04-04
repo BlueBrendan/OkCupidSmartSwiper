@@ -3,7 +3,7 @@ from externalDisplays import updateResultsDisplay, createFinalDisplay
 import time
 
 def waitForCardDeck(driver, value):
-    time.sleep(0.3)
+    time.sleep(0.25)
     try:
         driver.find_element_by_class_name("cardsummary")
         value = False
@@ -25,6 +25,63 @@ def waitForProfile(driver):
         return
     except:
         waitForProfile(driver)
+
+def waitForBasics(driver, count, value):
+    if count >= 5:
+        value = False
+        return value
+    try:
+        driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--basics')
+        value = True
+        return value
+    except:
+        try:
+            driver.find_element_by_class_name('matchprofile-details-section.isLoading')
+            time.sleep(0.3)
+            count += 1
+            waitForBasics(driver, count, value)
+        except:
+            value = False
+            return value
+    return value
+
+def waitForLooks(driver, count, value):
+    if count >= 5:
+        value = False
+        return value
+    try:
+        driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks')
+        value = True
+        return value
+    except:
+        try:
+            driver.find_element_by_class_name('matchprofile-details-section.isLoading')
+            time.sleep(0.3)
+            count += 1
+            waitForLooks(driver, count, value)
+        except:
+            value = False
+            return value
+    return value
+
+def waitForBackground(driver, count, value):
+    if count >= 5:
+        value = False
+        return value
+    try:
+        driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background')
+        value = True
+        return value
+    except:
+        try:
+            driver.find_element_by_class_name('matchprofile-details-section.isLoading')
+            time.sleep(0.3)
+            count += 1
+            waitForBackground(driver, count, value)
+        except:
+            value = False
+            return value
+    return value
 
 def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, leftLabel, rightLabel, totalSwipeCount, rightSwipeCount, leftSwipeCount, swipeList, buttons):
     empty = waitForCardDeck(driver, False)
@@ -61,7 +118,8 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
 
         # check orientation/relationship type (if applicable)
         basicsPass = False
-        try:
+        value = waitForBasics(driver, 0, False)
+        if value:
             basicsDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--basics').text).lower()
             for orientation in options['Orientation']:
                 if orientation.lower() in basicsDescription:
@@ -71,24 +129,23 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
                 if relationship.lower() in basicsDescription:
                     basicsPass = True
                     break
-        except:
-            pass
 
         # check body type (if applicable)
         bodyTypePass = False
-        try:
+        value = waitForLooks(driver, 0, False)
+        if value:
             bodyTypeDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks').text).lower()
             for bodyType in options['Body Type']:
                 if bodyType.lower() in bodyTypeDescription.lower():
                     bodyTypePass = True
                     break
-        except:
-            pass
 
         # check ethnicity/religion/education (if applicable)
         backgroundPass = False
-        try:
-            backgroundDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background').text).lower()
+        value = waitForBackground(driver, 0, False)
+        if value:
+            backgroundDescription = str(driver.find_element_by_class_name(
+                'matchprofile-details-section.matchprofile-details-section--background').text).lower()
             for ethnicity in options['Ethnicity']:
                 if ethnicity.lower() in backgroundDescription:
                     backgroundPass = True
@@ -101,8 +158,6 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
                 if education.lower() in backgroundDescription:
                     backgroundPass = True
                     break
-        except:
-            pass
 
         # check for intro
         intro = False
@@ -125,7 +180,7 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
             else:
                 cardDeckLeftSwipe(driver)
                 leftSwipeCount += 1
-        elif basicsPass or bodyTypePass or backgroundPass:
+        elif phrasePass or basicsPass or bodyTypePass or backgroundPass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
         elif options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():

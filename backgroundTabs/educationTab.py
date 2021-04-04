@@ -48,7 +48,7 @@ def educationEdit(tab_parent, options):
 
     listboxContainer = tk.Frame(tab3, bg=bg)
     listboxContainer.pack()
-    educationListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 15), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
+    educationListbox = tk.Listbox(listboxContainer, font=('Symphonie Grotesque', 14), bg=quaternary_bg, selectbackground=tertiary_bg, highlightbackground=quaternary_bg, highlightcolor=quaternary_bg, fg='white', selectforeground='white', activestyle='none')
     educations = ['High school', 'Trade/tech school', 'In college', 'Undergraduate degree']
     for index, education in enumerate(educations):
         educationListbox.insert(tk.END, education)
