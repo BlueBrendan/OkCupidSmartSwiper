@@ -3,6 +3,8 @@ from settings import readConfigFile, createConfigFile, zeroEntrybox, nonZeroEntr
 from basicsEdit import basicsEdit
 from looksEdit import looksEdit
 from backgroundEdit import backgroundEdit
+from lifestyleEdit import lifestyleEdit
+from familyEdit import familyEdit
 from phraseEdit import phraseEdit
 from sys import platform
 import tkinter as tk
@@ -37,9 +39,9 @@ root = tk.Tk()
 root.title("OkCupid Smart Swiper")
 ws = root.winfo_screenwidth() # width of the screen
 hs = root.winfo_screenheight() # height of the screen
-x = (ws/2) - (1400/2)
+x = (ws/2) - (1600/2)
 y = (hs/2) - (430/2)
-root.geometry('%dx%d+%d+%d' % (1400, 430, x, y))
+root.geometry('%dx%d+%d+%d' % (1600, 430, x, y))
 root.configure(bg=bg)
 if platform == 'win32':
     root.iconbitmap(resourcePath('favicon.ico'))
@@ -134,14 +136,25 @@ questionsCheckbutton.pack(anchor="w", pady=(10, 0))
 # number of questions threshold selection
 buttonsContainer = tk.Frame(optionsTopRow, bg=bg)
 buttonsContainer.pack(padx=(50, 0))
-basicsButton = tk.Button(buttonsContainer, text="BASICS", command=lambda: basicsEdit(options, basicsButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+
+leftButtons = tk.Frame(buttonsContainer, bg=bg)
+leftButtons.pack(side="left")
+rightButtons = tk.Frame(buttonsContainer, bg=bg)
+rightButtons.pack(side='right', padx=(30, 0))
+
+
+basicsButton = tk.Button(leftButtons, text="BASICS", command=lambda: basicsEdit(options, basicsButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 basicsButton.pack(pady=(0, 15))
-looksButton = tk.Button(buttonsContainer, text="LOOKS", command=lambda: looksEdit(options, looksButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+looksButton = tk.Button(leftButtons, text="LOOKS", command=lambda: looksEdit(options, looksButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 looksButton.pack(pady=(0, 15))
-backgroundButton = tk.Button(buttonsContainer, text="BACKGROUND", command=lambda: backgroundEdit(options, backgroundButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+backgroundButton = tk.Button(leftButtons, text="BACKGROUND", command=lambda: backgroundEdit(options, backgroundButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
 backgroundButton.pack(pady=(0, 15))
-phrasesButton = tk.Button(buttonsContainer, text="PHRASES", command=lambda: phraseEdit(options, phrasesButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
-phrasesButton.pack()
+lifestyleButton = tk.Button(rightButtons, text="LIFESTYLE", command=lambda: lifestyleEdit(options, lifestyleButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+lifestyleButton.pack(pady=(0, 15))
+familyButton = tk.Button(rightButtons, text="FAMILY", command=lambda: familyEdit(options, familyButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+familyButton.pack(pady=(0, 15))
+phrasesButton = tk.Button(rightButtons, text="PHRASES", command=lambda: phraseEdit(options, phrasesButton, bg, secondary_bg, tertiary_bg), width=12, font=('Symphonie Grotesque', 15), fg="white", bg=tertiary_bg, highlightthickness=0, activebackground=tertiary_bg, activeforeground="white")
+phrasesButton.pack(pady=(0, 15))
 
 bottomContainer = tk.Frame(mainContainer, bg=bg)
 bottomContainer.pack(fill='x', pady=(25, 0))
@@ -161,7 +174,7 @@ introLabel =tk.Label(introContainer, text="Swipe Right on Detecting Intro", wrap
 introLabel.pack(side="left")
 
 startButton = tk.Button(bottomContainer, text="BEGIN SWIPING", command=lambda: login(root, [startButton, basicsButton, looksButton, backgroundButton, phrasesButton], bg, secondary_bg), font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white")
-startButton.pack(side="left", padx=(230, 0))
+startButton.pack(side="left", padx=(330, 0))
 
 root.mainloop()
 

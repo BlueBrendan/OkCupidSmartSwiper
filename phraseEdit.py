@@ -35,9 +35,9 @@ def phraseAddPrompt(phraseListbox, options, bg, secondary_bg):
     addPhraseWindow.title("Add Phrase")
     ws = addPhraseWindow.winfo_screenwidth()  # width of the screen
     hs = addPhraseWindow.winfo_screenheight()  # height of the screen
-    x = (ws / 2) - (500 / 2)
+    x = (ws / 2) - (450 / 2)
     y = (hs / 2) - (180 / 2)
-    addPhraseWindow.geometry('%dx%d+%d+%d' % (500, 180, x, y))
+    addPhraseWindow.geometry('%dx%d+%d+%d' % (450, 180, x, y))
     addPhraseWindow.configure(bg=bg)
     if platform == 'win32':
         addPhraseWindow.iconbitmap(resourcePath('favicon.ico'))
@@ -45,7 +45,7 @@ def phraseAddPrompt(phraseListbox, options, bg, secondary_bg):
     mainContainer.pack()
     newPhrase = tk.StringVar()
     tk.Label(mainContainer, text="Enter a new phrase", font=('Symphonie Grotesque', 14), fg="white", bg=bg).pack(pady=(20, 0))
-    tk.Entry(mainContainer, textvariable=newPhrase, width=40, font=("Symphonie Grotesque", 14), highlightbackground="black").pack(pady=(15, 0))
+    tk.Entry(mainContainer, textvariable=newPhrase, width=35, font=("Symphonie Grotesque", 14), highlightbackground="black").pack(pady=(15, 0))
     tk.Button(mainContainer, text="ADD", command=lambda: phraseAdd(phraseListbox, options, newPhrase, addPhraseWindow, bg, secondary_bg), width=5, font=('Symphonie Grotesque', 15), fg="white", bg=secondary_bg, highlightthickness=0, activebackground=secondary_bg, activeforeground="white").pack(pady=(25,0))
 
 def phraseAdd(phraseListbox, options, newPhrase, addPhraseWindow, bg, secondary_bg):

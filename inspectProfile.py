@@ -26,12 +26,21 @@ def waitForProfile(driver):
     except:
         waitForProfile(driver)
 
-def waitForBasics(driver, count, value):
+def waitForSection(driver, count, value, type):
     if count >= 5:
         value = False
         return value
     try:
-        driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--basics')
+        if type == 'basics':
+            driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--basics')
+        elif type == 'looks':
+            driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks')
+        elif type == 'background':
+            driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background')
+        elif type == 'lifestyle':
+            driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--lifestyle')
+        elif type == 'family':
+            driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--family')
         value = True
         return value
     except:
@@ -39,45 +48,7 @@ def waitForBasics(driver, count, value):
             driver.find_element_by_class_name('matchprofile-details-section.isLoading')
             time.sleep(0.3)
             count += 1
-            waitForBasics(driver, count, value)
-        except:
-            value = False
-            return value
-    return value
-
-def waitForLooks(driver, count, value):
-    if count >= 5:
-        value = False
-        return value
-    try:
-        driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks')
-        value = True
-        return value
-    except:
-        try:
-            driver.find_element_by_class_name('matchprofile-details-section.isLoading')
-            time.sleep(0.3)
-            count += 1
-            waitForLooks(driver, count, value)
-        except:
-            value = False
-            return value
-    return value
-
-def waitForBackground(driver, count, value):
-    if count >= 5:
-        value = False
-        return value
-    try:
-        driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background')
-        value = True
-        return value
-    except:
-        try:
-            driver.find_element_by_class_name('matchprofile-details-section.isLoading')
-            time.sleep(0.3)
-            count += 1
-            waitForBackground(driver, count, value)
+            waitForSection(driver, count, value, type)
         except:
             value = False
             return value
@@ -118,7 +89,7 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
 
         # check orientation/relationship type (if applicable)
         basicsPass = False
-        value = waitForBasics(driver, 0, False)
+        value = waitForSection(driver, 0, False, 'basics')
         if value:
             basicsDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--basics').text).lower()
             for orientation in options['Orientation']:
@@ -132,7 +103,7 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
 
         # check body type (if applicable)
         bodyTypePass = False
-        value = waitForLooks(driver, 0, False)
+        value = waitForSection(driver, 0, False, 'looks')
         if value:
             bodyTypeDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--looks').text).lower()
             for bodyType in options['Body Type']:
@@ -142,10 +113,9 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
 
         # check ethnicity/religion/education (if applicable)
         backgroundPass = False
-        value = waitForBackground(driver, 0, False)
+        value = waitForSection(driver, 0, False, 'background')
         if value:
-            backgroundDescription = str(driver.find_element_by_class_name(
-                'matchprofile-details-section.matchprofile-details-section--background').text).lower()
+            backgroundDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--background').text).lower()
             for ethnicity in options['Ethnicity']:
                 if ethnicity.lower() in backgroundDescription:
                     backgroundPass = True
@@ -157,6 +127,38 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
             for education in options['Education']:
                 if education.lower() in backgroundDescription:
                     backgroundPass = True
+                    break
+
+        # check cigarettes/alcohol/marijuana (if applicable)
+        lifestylePass = False
+        value = waitForSection(driver, 0 , False, 'lifestyle')
+        if value:
+            lifestyleDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--lifestyle').text).lower()
+            for cigarettes in options['Cigarettes']:
+                if cigarettes.lower() in lifestyleDescription:
+                    lifestylePass = True
+                    break
+            for alcohol in options['Alcohol']:
+                if alcohol.lower() in lifestyleDescription:
+                    lifestylePass = True
+                    break
+            for marijuana in options['Marijuana']:
+                if marijuana.lower() in lifestyleDescription:
+                    lifestylePass = True
+                    break
+
+        # check pets/kids (if applicable)
+        familyPass = False
+        value = waitForSection(driver, 0, False, 'family')
+        if value:
+            familyDescription = str(driver.find_element_by_class_name('matchprofile-details-section.matchprofile-details-section--family').text).lower()
+            for pets in options['Pets']:
+                if pets.lower() in familyDescription:
+                    familyPass = True
+                    break
+            for kids in options['Kids']:
+                if kids.lower() in familyDescription:
+                    familyPass = True
                     break
 
         # check for intro
@@ -180,9 +182,11 @@ def inspectProfileFunction(root, driver, options, resultsDisplay, titleLabel, le
             else:
                 cardDeckLeftSwipe(driver)
                 leftSwipeCount += 1
-        elif phrasePass or basicsPass or bodyTypePass or backgroundPass:
+        # check qualitative options
+        elif phrasePass or basicsPass or bodyTypePass or backgroundPass or lifestylePass or familyPass:
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
+        # check quantitative options
         elif options['Check Percentage'].get() and not matchPercentage >= options['Minimum Percentage'].get():
             cardDeckLeftSwipe(driver)
             leftSwipeCount += 1
